@@ -13,7 +13,7 @@ class ShoppingDashboard < Administrate::BaseDashboard
     id: Field::Number,
     code: Field::String,
     total: Field::String.with_options(searchable: false),
-    items: Field::Text,
+    items: Field::HasMany.with_options(class_name: 'ShoppingItem'),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -50,14 +50,14 @@ class ShoppingDashboard < Administrate::BaseDashboard
     :beneficiary,
     :provider,
     :code,
-    :total,
-    :items,
+    # :total,
+    # :items,
   ].freeze
 
   # Overwrite this method to customize how shoppings are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(shopping)
-  #   "Shopping ##{shopping.id}"
-  # end
+  def display_resource(shopping)
+    "[##{shopping.id}] Beneficiario \"#{shopping.beneficiary.full_name}\""
+  end
 end

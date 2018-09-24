@@ -31,6 +31,8 @@ class ProviderDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :id,
     :name,
+    :shoppings,
+    :beneficiaries,
     :created_at,
     :updated_at,
   ].freeze

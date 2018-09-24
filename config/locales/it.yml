@@ -1,0 +1,58 @@
+it:
+  resources:
+    beneficiary: Beneficiario
+    beneficiaries: Beneficiari
+    provider: Ente di rif.
+    providers: Enti di rif.
+    shopping: Spesa
+    shoppings: Spese
+    shopping_items: Voci di spesa
+    shopping_item: Voce di spesa
+    cities: Città
+    city: Città
+    item_categories: Categorie
+    item_category: Categoria
+    users: Utenti
+    user: Utente
+    warehouse_items: Magazzino
+    warehouse_item: Prodotto
+  resource_attributes:
+    code: Codice
+    shoppings: Spese
+    shopping: Spesa
+    provider: Ente di rif.
+    beneficiary: Beneficiario
+    beneficiary_id: Beneficiario
+    city: Città
+    full_name: Nome completo
+    address: Indirizzo
+    telephone: Telefono
+    id: ID
+    family_size: Nucleo familiare
+    children_count: Numero figli
+    max_shop_count: Max spese
+    current_shop_count: Spese fatte
+    frequency: Frequenza
+    extended_at: Proroga
+    contribution: Contributo
+    created_at: Creato il
+    updated_at: Aggiornato il
+    item_categories: Categorie
+    item_category: Categoria
+    item_category_id: Categoria
+    description: Descrizione
+    price: Prezzo
+    stock_count: Scorta
+    provider_id: Ente di rif.
+    city_id: Città
+    extended_at: Proroga
+    name: Nome
+    beneficiaries: Beneficiari
+    total: Totale
+    items: Lista
+    warehouse_item: Prodotto
+    quantity: Quantità
+    warehouse_item_id: Prodotto
+    shopping_id: Spesa
+    email: E-mail
+    app_role: Ruolo

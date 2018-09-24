@@ -22,6 +22,12 @@ By default, it renders:
     <%= content_for(:title) %> - <%= Rails.application.class.parent_name.titlecase %>
   </title>
   <%= render "stylesheet" %>
+  <style>
+  .header-container {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  </style>
   <%= csrf_meta_tags %>
 </head>
 <body>

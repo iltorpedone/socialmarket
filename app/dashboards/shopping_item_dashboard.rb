@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class UserDashboard < Administrate::BaseDashboard
+class ShoppingItemDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,11 +8,10 @@ class UserDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    shopping: Field::BelongsTo.with_options(order: 'created_at'),
+    warehouse_item: Field::BelongsTo.with_options(order: 'code'),
     id: Field::Number,
-    full_name: Field::String,
-    email: Field::String,
-    password: Field::Password,
-    app_role: Field::Select.with_options(collection: User.app_roles.keys),
+    quantity: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -23,19 +22,19 @@ class UserDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
+    # :shopping,
+    :warehouse_item,
     :id,
-    :full_name,
-    :email,
-    :app_role,
+    :quantity,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
+    :shopping,
+    :warehouse_item,
     :id,
-    :full_name,
-    :email,
-    :app_role,
+    :quantity,
     :created_at,
     :updated_at,
   ].freeze
@@ -44,16 +43,15 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :full_name,
-    :email,
-    :password,
-    :app_role,
+    :shopping,
+    :warehouse_item,
+    :quantity,
   ].freeze
 
-  # Overwrite this method to customize how users are displayed
+  # Overwrite this method to customize how shopping items are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(user)
-  #   "User ##{user.id}"
-  # end
+  def display_resource(shopping_item)
+    "##{shopping_item.id} #{shopping_item.warehouse_item.description} x#{shopping_item.quantity} € #{shopping_item.warehouse_item.price * shopping_item.quantity}"
+  end
 end

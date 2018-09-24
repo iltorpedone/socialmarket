@@ -6,14 +6,10 @@ https://socialmarket-it.herokuapp.com
 
 - [ ] Login
 - [ ] Sidebar
-- [ ] Accounts:
-  - [ ] Index
-  - [ ] Create
-  - [ ] Show
-  - [ ] Update
-- [ ] Accounts::new
+- [ ] Accounts
 - [ ] Beneficiaries
 - [ ] ShoppingIndex
 - [ ] ShoppingNew
 - [ ] Warehouse
+- [ ] Translate everything in italian
 - [ ] Configure the domain https://www.socialmarketnordmi.org

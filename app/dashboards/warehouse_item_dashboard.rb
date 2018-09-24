@@ -57,7 +57,7 @@ class WarehouseItemDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how warehouse items are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(warehouse_item)
-  #   "WarehouseItem ##{warehouse_item.id}"
-  # end
+  def display_resource(warehouse_item)
+    "Prodotto cod. #{warehouse_item.code}"
+  end
 end

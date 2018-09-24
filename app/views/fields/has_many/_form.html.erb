@@ -20,7 +20,7 @@ and is augmented with [Selectize].
 %>
 
 <div class="field-unit__label">
-  <%= f.label field.attribute, for: "#{f.object_name}_#{field.attribute_key}" %>
+  <%= f.label field.attribute, t("resource_attributes.#{field.attribute.to_s.parameterize.underscore.downcase}"), for: "#{f.object_name}_#{field.attribute_key}" %>
 </div>
 <div class="field-unit__field">
   <%= f.select(field.attribute_key, nil, {}, multiple: true) do %>

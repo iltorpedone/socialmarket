@@ -30,6 +30,7 @@ class CityDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :id,
+    :beneficiaries,
     :name,
     :created_at,
     :updated_at,

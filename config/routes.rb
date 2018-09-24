@@ -4,7 +4,10 @@ Rails.application.routes.draw do
       resources :cities
       resources :item_categories
       resources :providers
-      resources :shoppings
+      resources :shoppings do
+        resources :shopping_items
+      end
+      resources :shopping_items
       resources :users
       resources :warehouse_items
 
