@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  full_name: MyString
+  address: MyString
+  city: MyString
+  telephone: MyString
+  family_size: 1
+  children_count: 1
+  max_shop_count: 1
+  current_shop_count: 1
+  frequency: 1
+  provider_id: 1
+  extended_at: 2018-09-24 12:32:57
+  contribution: 9.99
+
+two:
+  full_name: MyString
+  address: MyString
+  city: MyString
+  telephone: MyString
+  family_size: 1
+  children_count: 1
+  max_shop_count: 1
+  current_shop_count: 1
+  frequency: 1
+  provider_id: 1
+  extended_at: 2018-09-24 12:32:57
+  contribution: 9.99
