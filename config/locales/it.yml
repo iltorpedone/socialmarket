@@ -56,3 +56,9 @@ it:
     shopping_id: Spesa
     email: E-mail
     app_role: Ruolo
+  app_roles:
+    administrator: Amministratore
+    beneficiary: Beneficiario
+    provider: Ente inviante
+    shop: Negozio
+    warehouse_worker: Magazzino

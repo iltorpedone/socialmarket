@@ -12,7 +12,7 @@ class UserDashboard < Administrate::BaseDashboard
     full_name: Field::String,
     email: Field::String,
     password: Field::Password,
-    app_role: Field::Select.with_options(collection: User.app_roles.keys),
+    app_role: AppRoleField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
