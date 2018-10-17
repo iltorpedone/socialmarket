@@ -4,6 +4,7 @@ https://socialmarket-it.herokuapp.com
 
 ## TODO
 
+- [x] Add the relation between users and providers
 - [ ] remove the field `extended_at` from `Beneficiary`
 - [ ] when a `Provider` creates a new `Beneficiary`, a confirmation e-mail is sent to the administrators. The newly created record is not active, yet. The e-mail contains a link to the page where the administrator can either confirm or deny the creation. If the administrator denies the creation, then the newly created record gets deleted. If the administrator confirms the creation, then the newly created record becomes active.
   - [ ] add `active` to `beneficiary`. It's a boolean attribute that defaults to `false`
