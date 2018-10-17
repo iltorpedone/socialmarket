@@ -2,8 +2,8 @@ it:
   resources:
     beneficiary: Beneficiario
     beneficiaries: Beneficiari
-    provider: Ente di rif.
-    providers: Enti di rif.
+    provider: Ente inviante
+    providers: Enti invianti
     shopping: Spesa
     shoppings: Spese
     shopping_items: Voci di spesa
@@ -20,7 +20,7 @@ it:
     code: Codice
     shoppings: Spese
     shopping: Spesa
-    provider: Ente di rif.
+    provider: Ente inviante
     beneficiary: Beneficiario
     beneficiary_id: Beneficiario
     city: Città
@@ -43,7 +43,7 @@ it:
     description: Descrizione
     price: Prezzo
     stock_count: Scorta
-    provider_id: Ente di rif.
+    provider_id: Ente inviante
     city_id: Città
     extended_at: Proroga
     name: Nome
