@@ -20,7 +20,6 @@ class BeneficiaryDashboard < Administrate::BaseDashboard
     max_shop_count: Field::Number,
     current_shop_count: Field::Number,
     frequency: Field::Number,
-    extended_at: Field::DateTime,
     contribution: Field::String.with_options(searchable: false),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -55,7 +54,6 @@ class BeneficiaryDashboard < Administrate::BaseDashboard
     :max_shop_count,
     :current_shop_count,
     :frequency,
-    :extended_at,
     :contribution,
     :created_at,
     :updated_at,
@@ -75,7 +73,6 @@ class BeneficiaryDashboard < Administrate::BaseDashboard
     :max_shop_count,
     :current_shop_count,
     :frequency,
-    :extended_at,
     :contribution,
   ].freeze
 
