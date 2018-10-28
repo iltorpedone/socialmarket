@@ -10,6 +10,7 @@ class BeneficiaryDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     provider: Field::BelongsTo.with_options(order: 'name'),
     city: Field::BelongsTo.with_options(order: 'name'),
+    is_active: Field::Boolean,
     shoppings: Field::HasMany,
     id: Field::Number,
     full_name: Field::String,
@@ -34,6 +35,7 @@ class BeneficiaryDashboard < Administrate::BaseDashboard
     :provider,
     :city,
     :full_name,
+    :is_active,
     :address,
     :telephone,
     :id,
@@ -44,6 +46,7 @@ class BeneficiaryDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :provider,
     :city,
+    :is_active,
     :shoppings,
     :id,
     :full_name,
@@ -66,6 +69,7 @@ class BeneficiaryDashboard < Administrate::BaseDashboard
     :provider,
     :city,
     :full_name,
+    :is_active,
     :address,
     :telephone,
     :family_size,

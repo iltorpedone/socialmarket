@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_17_151800) do
+ActiveRecord::Schema.define(version: 2018_10_17_152631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,8 +29,10 @@ ActiveRecord::Schema.define(version: 2018_10_17_151800) do
     t.decimal "contribution"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_active", default: false
     t.index ["city_id"], name: "index_beneficiaries_on_city_id"
     t.index ["frequency"], name: "index_beneficiaries_on_frequency"
+    t.index ["is_active"], name: "index_beneficiaries_on_is_active"
     t.index ["provider_id"], name: "index_beneficiaries_on_provider_id"
   end
 

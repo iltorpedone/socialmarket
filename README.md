@@ -7,7 +7,9 @@ https://socialmarket-it.herokuapp.com
 - [x] Add the relation between users and providers
 - [x] remove the field `extended_at` from `Beneficiary`
 - [ ] when a `Provider` creates a new `Beneficiary`, a confirmation e-mail is sent to the administrators. The newly created record is not active, yet. The e-mail contains a link to the page where the administrator can either confirm or deny the creation. If the administrator denies the creation, then the newly created record gets deleted. If the administrator confirms the creation, then the newly created record becomes active.
-  - [ ] add `active` to `beneficiary`. It's a boolean attribute that defaults to `false`
+  - [x] add `active` to `beneficiary`. It's a boolean attribute that defaults to `false`
+  - [x] show only active beneficiaries when creating a new shopping
+  - [x] Allow the edit of the active status
   - [ ] confirmation e-mail
   - [ ] confirmation page
 - [ ] when a `Provider` updates a `Beneficiary`'s `proposed_max_shop_count` field, a confirmation e-mail is sent to the administrators. The e-mail contains a link to the page where the administrator can either confirm or deny the variation. If the administrator confirms the variation, then `proposed_max_shop_count` is reset to `nil` and `max_shop_count` gets updated to the proposed value. If the administrator denies the variation, `proposed_max_shop_count` is reset to `nil`.
