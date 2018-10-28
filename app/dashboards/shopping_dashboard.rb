@@ -8,7 +8,7 @@ class ShoppingDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    beneficiary: Field::BelongsTo.with_options(
+    beneficiary: ShoppingBeneficiaryField.with_options(
       order: 'full_name',
       scope: -> { Beneficiary.active },
     ),

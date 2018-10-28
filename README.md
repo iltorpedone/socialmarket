@@ -12,6 +12,9 @@ https://socialmarket-it.herokuapp.com
   - [x] Allow the edit of the active status
   - [ ] confirmation e-mail
   - [ ] confirmation page
+- [ ] A `Provider` can see only its beneficiaries.
+  - [x] When creating a new shopping
+  - [ ] TODO: enumerate other occurrences
 - [ ] when a `Provider` updates a `Beneficiary`'s `proposed_max_shop_count` field, a confirmation e-mail is sent to the administrators. The e-mail contains a link to the page where the administrator can either confirm or deny the variation. If the administrator confirms the variation, then `proposed_max_shop_count` is reset to `nil` and `max_shop_count` gets updated to the proposed value. If the administrator denies the variation, `proposed_max_shop_count` is reset to `nil`.
   - [ ] add `proposed_max_shop_count` to `Beneficiary`
   - [ ] confirmation e-mail
