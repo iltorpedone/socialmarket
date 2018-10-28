@@ -1,4 +1,26 @@
 it:
+  activerecord:
+    models:
+      beneficiary: Beneficiario
+  helpers:
+    label:
+      beneficiary:
+        is_active: Attivo?
+        city: Città
+        provider: Ente inviante
+        full_name: Nome completo
+        shoppings: Spese
+        address: Indirizzo
+        telephone: Telefono
+        family_size: Nucleo familiare
+        children_count: Numero figli
+        max_shop_count: Max spese
+        current_shop_count: Spese fatte
+        frequency: Frequenza
+        contribution: Contributo
+        created_at: Creato il
+        updated_at: Aggiornato il
+
   resources:
     beneficiary: Beneficiario
     beneficiaries: Beneficiari
