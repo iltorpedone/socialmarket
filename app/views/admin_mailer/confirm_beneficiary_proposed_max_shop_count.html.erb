@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Conferma variazione di soglia massima spesa</title>
+  </head>
+  <body>
+    Ente inviante: <%= @beneficiary.provider.name %><br />
+    Beneficiario: <%= @beneficiary.full_name %><br />
+    <h2>Soglia massima di spesa</h2>
+    Attuale: <%= @beneficiary.max_shop_count %>
+    Proposta dall'ente inviante: <%= @beneficiary.proposed_max_shop_count %>
+    <%= confirmation_max_shop_count_admin_beneficiary_url(@beneficiary.id) %>
+  </body>
+</html>

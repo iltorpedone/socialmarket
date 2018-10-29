@@ -16,10 +16,10 @@ https://socialmarket-it.herokuapp.com
 - [ ] A `Provider` can see only its beneficiaries.
   - [x] When creating a new shopping
   - [ ] TODO: enumerate other occurrences
-- [ ] when a `Provider` updates a `Beneficiary`'s `proposed_max_shop_count` field, a confirmation e-mail is sent to the administrators. The e-mail contains a link to the page where the administrator can either confirm or deny the variation. If the administrator confirms the variation, then `proposed_max_shop_count` is reset to `nil` and `max_shop_count` gets updated to the proposed value. If the administrator denies the variation, `proposed_max_shop_count` is reset to `nil`.
-  - [ ] add `proposed_max_shop_count` to `Beneficiary`
-  - [ ] confirmation e-mail
-  - [ ] confirmation page
+- [x] when a `Provider` updates a `Beneficiary`'s `proposed_max_shop_count` field, a confirmation e-mail is sent to the administrators. The e-mail contains a link to the page where the administrator can either confirm or deny the variation. If the administrator confirms the variation, then `proposed_max_shop_count` is reset to `nil` and `max_shop_count` gets updated to the proposed value. If the administrator denies the variation, `proposed_max_shop_count` is reset to `nil`.
+  - [x] add `proposed_max_shop_count` to `Beneficiary`
+  - [x] confirmation e-mail
+  - [x] confirmation page
 - [ ] Configure the domain https://www.socialmarketnordmi.org
 - [ ] when creating a `Provider`, provide the following fields:
   - telephone
@@ -90,3 +90,4 @@ https://socialmarket-it.herokuapp.com
   - [ ] allows the creation inline of a new product belonging to the selected category
 - [ ] create a better style for the login page
 - [ ] create a better style for the beneficiary confirmation page
+- [ ] create a better style for the beneficiary's max shop count confirmation page

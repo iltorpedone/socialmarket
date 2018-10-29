@@ -14,7 +14,20 @@ and renders all form fields for a resource's editable attributes.
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Form
 %>
 
-<%= form_for(page.resource, url: admin_beneficiaries_path, html: { class: "form" }) do |f| %>
+<%
+form_attributes = if page.resource.persisted?
+  {
+    url: admin_beneficiary_path(page.resource.id),
+    method: :patch,
+  }
+else
+  {
+    url: admin_beneficiaries_path,
+    method: :post,
+  }
+end
+%>
+<%= form_for(page.resource, url: form_attributes[:url], method: form_attributes[:method], html: { class: "form" }) do |f| %>
   <% if page.resource.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -36,6 +49,15 @@ and renders all form fields for a resource's editable attributes.
   <% page.attributes.each do |attribute| -%>
     <% if current_user.provider? %>
       <% next if [:provider, :is_active].include?(attribute.attribute) %>
+      <% if attribute.attribute == :max_shop_count %>
+        <div class="field-unit__label">
+          <%= f.label attribute.attribute %>
+        </div>
+        <div class="field-unit__field">
+          <%= render locals: { field: attribute }, partial: "/fields/#{attribute.class.to_s.demodulize.underscore}/show" %>
+        </div>
+        <% next %>
+      <% end %>
     <% end %>
     <div class="field-unit field-unit--<%= attribute.html_class %>">
       <%= render_field attribute, f: f %>

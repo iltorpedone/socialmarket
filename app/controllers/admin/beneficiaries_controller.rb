@@ -21,6 +21,26 @@ module Admin
       end
     end
 
+    def update
+      proposed_changed = resource_params[:proposed_max_shop_count].present? && resource_params[:proposed_max_shop_count] != requested_resource.proposed_max_shop_count
+      if requested_resource.update(resource_params)
+        if proposed_changed
+          AdminMailer.
+            with(beneficiary: requested_resource).
+            confirm_beneficiary_proposed_max_shop_count.
+            deliver_now
+        end
+        redirect_to(
+          [namespace, requested_resource],
+          notice: translate_with_resource("update.success"),
+        )
+      else
+        render :edit, locals: {
+          page: Administrate::Page::Form.new(dashboard, requested_resource),
+        }
+      end
+    end
+
     def confirmation
       # TODO: add authorization.
       # Only administrators can perform this action.
@@ -50,6 +70,40 @@ module Admin
       beneficiary = Beneficiary.find(params[:id])
       beneficiary.delete
       redirect_to admin_root_path, notice: 'Beneficiary deleted'
+    end
+
+    def confirmation_max_shop_count
+      # TODO: add authorization.
+      # Only administrators can perform this action.
+      # Check the definition of `AuthorizeRole`.
+      @beneficiary = Beneficiary.find_by(id: params[:id])
+      unless @beneficiary
+        redirect_to admin_beneficiaries_path, notice: 'Il beneficiario richiesto non esiste.'
+      end
+      if @beneficiary.proposed_max_shop_count.blank?
+        redirect_to admin_beneficiary_path(@beneficiary), notice: 'Il beneficiario non ha alcuna soglia di spesa massima proposta.'
+      end
+    end
+
+    def confirm_max_shop_count
+      # TODO: add authorization.
+      # Only administrators can perform this action.
+      # Check the definition of `AuthorizeRole`.
+      beneficiary = Beneficiary.find(params[:id])
+      beneficiary.max_shop_count = beneficiary.proposed_max_shop_count
+      beneficiary.proposed_max_shop_count = nil
+      beneficiary.save!
+      redirect_to admin_beneficiary_path(beneficiary), notice: 'Nuova soglia confermata!'
+    end
+
+    def deny_confirmation_max_shop_count
+      # TODO: add authorization.
+      # Only administrators can perform this action.
+      # Check the definition of `AuthorizeRole`.
+      beneficiary = Beneficiary.find(params[:id])
+      beneficiary.proposed_max_shop_count = nil
+      beneficiary.save!
+      redirect_to admin_beneficiary_path(beneficiary), notice: 'Soglia negata.'
     end
 
     private

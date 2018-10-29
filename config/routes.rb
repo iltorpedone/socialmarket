@@ -5,6 +5,9 @@ Rails.application.routes.draw do
           get :confirmation
           put :confirm
           post :deny_confirmation
+          get :confirmation_max_shop_count
+          put :confirm_max_shop_count
+          post :deny_confirmation_max_shop_count
         end
       end
       resources :cities
