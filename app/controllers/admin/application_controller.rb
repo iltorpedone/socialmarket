@@ -15,7 +15,8 @@ module Admin
         user: current_user,
         controller: params[:controller],
         action: params[:action],
-        resource: scoped_resource,
+        scoped_resource: scoped_resource,
+        requested_resource: params[:id].present? ? requested_resource : nil,
       ).can?
         redirect_to root_path
       end

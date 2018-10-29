@@ -1,5 +1,5 @@
 class AuthorizeRole
-  attr_accessor :user, :controller, :action, :resource
+  attr_accessor :user, :controller, :action, :scoped_resource, :requested_resource
   include ActiveModel::Model
 
   def can?
@@ -15,6 +15,12 @@ class AuthorizeRole
 
   def can_provider?
     # TODO: implement me
+    if controller == 'admin/users'
+      return false if ['new', 'create', 'delete'].include?(action)
+      if ['new', 'edit', 'update'].include?(action)
+        return requested_resource.id == user.id
+      end
+    end
     true
   end
 
