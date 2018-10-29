@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   namespace :admin do
-      resources :beneficiaries
+      resources :beneficiaries do
+        member do
+          get :confirmation
+          put :confirm
+          post :deny_confirmation
+        end
+      end
       resources :cities
       resources :item_categories
       resources :providers

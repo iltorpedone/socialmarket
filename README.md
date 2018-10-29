@@ -6,12 +6,13 @@ https://socialmarket-it.herokuapp.com
 
 - [x] Add the relation between users and providers
 - [x] remove the field `extended_at` from `Beneficiary`
-- [ ] when a `Provider` creates a new `Beneficiary`, a confirmation e-mail is sent to the administrators. The newly created record is not active, yet. The e-mail contains a link to the page where the administrator can either confirm or deny the creation. If the administrator denies the creation, then the newly created record gets deleted. If the administrator confirms the creation, then the newly created record becomes active.
+- [x] when a `Provider` creates a new `Beneficiary`, a confirmation e-mail is sent to the administrators. The newly created record is not active, yet. The e-mail contains a link to the page where the administrator can either confirm or deny the creation. If the administrator denies the creation, then the newly created record gets deleted. If the administrator confirms the creation, then the newly created record becomes active.
   - [x] add `active` to `beneficiary`. It's a boolean attribute that defaults to `false`
   - [x] show only active beneficiaries when creating a new shopping
   - [x] Allow the edit of the active status
-  - [ ] confirmation e-mail
-  - [ ] confirmation page
+  - [x] beneficiary creation form
+  - [x] confirmation e-mail
+  - [x] confirmation page
 - [ ] A `Provider` can see only its beneficiaries.
   - [x] When creating a new shopping
   - [ ] TODO: enumerate other occurrences
@@ -88,3 +89,4 @@ https://socialmarket-it.herokuapp.com
   - [ ] add a "category" select that filters all the products belonging to the selected category
   - [ ] allows the creation inline of a new product belonging to the selected category
 - [ ] create a better style for the login page
+- [ ] create a better style for the beneficiary confirmation page
