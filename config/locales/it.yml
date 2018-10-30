@@ -4,6 +4,10 @@ it:
       beneficiary: Beneficiario
     errors:
       models:
+        user:
+          attributes:
+            password:
+              blank: La password non può essere vuota
         provider:
           attributes:
             user:

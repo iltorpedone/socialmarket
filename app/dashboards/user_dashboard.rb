@@ -49,6 +49,7 @@ class UserDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :full_name,
     :email,
+    :password,
     :app_role,
     :is_active,
   ].freeze

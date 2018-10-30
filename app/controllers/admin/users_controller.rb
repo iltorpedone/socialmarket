@@ -3,9 +3,14 @@ module Admin
     def create
       resource = resource_class.new(resource_params)
       resource.password = SecureRandom.hex(16) # sets this randomly because Clearance validations require it but the user is not active at this point.
+      resource.signup_token = SecureRandom.hex(16)
       authorize_resource(resource)
 
       if resource.save
+        AdminMailer.
+          with(user: resource).
+          complete_signup.
+          deliver_now
         if resource.provider?
           Provider.create(
             name: resource.full_name,

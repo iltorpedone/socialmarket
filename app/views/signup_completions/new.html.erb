@@ -1,0 +1,6 @@
+<%= render "admin/application/flashes" -%>
+<%= form_tag(signup_completion_path, method: :post) do |form| %>
+  <%= hidden_field_tag :token, @user.signup_token %>
+  <%= password_field_tag :password %>
+  <%= submit_tag 'Salva' %>
+<% end %>

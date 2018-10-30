@@ -14,4 +14,9 @@ class AdminMailer < ApplicationMailer
     end
     mail(to: to, subject: 'Conferma variazione di soglia massima di spesa')
   end
+
+  def complete_signup
+    @user = params[:user]
+    mail(to: @user.email, subject: 'Completa il tuo profilo')
+  end
 end
