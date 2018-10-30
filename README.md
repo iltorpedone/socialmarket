@@ -20,7 +20,8 @@ https://socialmarket-it.herokuapp.com
   - [x] add `proposed_max_shop_count` to `Beneficiary`
   - [x] confirmation e-mail
   - [x] confirmation page
-- [ ] Configure the domain https://www.socialmarketnordmi.org
+- [ ] Configure the domain www.socialmarketnordmi.org
+- [ ] Configure the TLS certificate
 - [ ] when creating a `Provider`, provide the following fields:
   - telephone
   - email
