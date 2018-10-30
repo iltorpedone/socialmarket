@@ -2,6 +2,12 @@ it:
   activerecord:
     models:
       beneficiary: Beneficiario
+    errors:
+      models:
+        provider:
+          attributes:
+            user:
+              required: Il campo utente è richiesto.
   helpers:
     label:
       beneficiary:
@@ -39,6 +45,7 @@ it:
     warehouse_items: Magazzino
     warehouse_item: Prodotto
   resource_attributes:
+    referent: Referente
     code: Codice
     shoppings: Spese
     shopping: Spesa

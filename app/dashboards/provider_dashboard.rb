@@ -8,11 +8,16 @@ class ProviderDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    address: Field::String,
     beneficiaries: Field::HasMany,
-    shoppings: Field::HasMany,
+    city: Field::BelongsTo.with_options(order: 'name'),
+    created_at: Field::DateTime,
+    email: Field::Email,
     id: Field::Number,
     name: Field::String,
-    created_at: Field::DateTime,
+    referent: Field::String,
+    shoppings: Field::HasMany,
+    telephone: Field::String,
     updated_at: Field::DateTime,
   }.freeze
 
@@ -24,6 +29,11 @@ class ProviderDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :name,
+    :city,
+    :email,
+    :telephone,
+    :address,
+    :referent,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -31,8 +41,13 @@ class ProviderDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :id,
     :name,
-    :shoppings,
+    :city,
+    :email,
+    :telephone,
+    :address,
+    :referent,
     :beneficiaries,
+    :shoppings,
     :created_at,
     :updated_at,
   ].freeze
@@ -42,6 +57,11 @@ class ProviderDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :name,
+    :city,
+    :email,
+    :telephone,
+    :address,
+    :referent,
   ].freeze
 
   # Overwrite this method to customize how providers are displayed

@@ -22,7 +22,7 @@ https://socialmarket-it.herokuapp.com
   - [x] confirmation page
 - [ ] Configure the domain www.socialmarketnordmi.org
 - [ ] Configure the TLS certificate
-- [ ] when creating a `Provider`, provide the following fields:
+- [x] when creating a `Provider`, provide the following fields:
   - telephone
   - email
   - referent
