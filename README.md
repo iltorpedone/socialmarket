@@ -7,9 +7,9 @@ https://socialmarket-it.herokuapp.com
 ```
 heroku run rails console
 User.create(
-  full_name: 'Foo Bar',
-  email: 'foo@bar.com',
-  password: 'foobar-Spam3gg',
+  full_name: 'Elliot Alderson',
+  email: 'elliot@fsociety.org',
+  password: 'Mr.Robot',
   app_role: :administrator,
   is_active: true,
 )
