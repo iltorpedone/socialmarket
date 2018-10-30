@@ -12,6 +12,8 @@ it:
           attributes:
             user:
               required: Il campo utente è richiesto.
+            city:
+              required: Il campo città è richiesto.
   helpers:
     label:
       beneficiary:

@@ -12,9 +12,10 @@ module Admin
           complete_signup.
           deliver_now
         if resource.provider?
-          Provider.create(
+          Provider.create!(
             name: resource.full_name,
             user: resource,
+            email: resource.email,
           )
         end
         redirect_to(
