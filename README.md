@@ -47,7 +47,7 @@ User.create(
   - [x] After the administrator create a `User`, an e-mail is sent to the user's e-mail address, containing a signup link that when opened by anyone allows **just** the completion of the signup.
   - [x] Once the user completes their profile, a confirmation e-mail is sent to the administrators.
   - [x] Once an administrator confirms the user, the user is able to login.
-- [ ] Once a user is created, their role cannot be modified.
+- [x] Once a user is created, their role cannot be modified.
 - [ ] Soft deletion of users:
   - [ ] deleted:boolean defalt=false
 - [ ] when creating a new `Beneficiary`, once a `Provider` is selected, populate the `city` field using `Provider.city`.
