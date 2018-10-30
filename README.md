@@ -41,7 +41,7 @@ User.create(
   - referent
   - address
   - city
-- [ ] User creation:
+- [x] User creation:
   - [x] When the administrator creates a `User`, he doesn't specify the `password`.
   - [x] A new user is not active by default.
   - [x] After the administrator create a `User`, an e-mail is sent to the user's e-mail address, containing a signup link that when opened by anyone allows **just** the completion of the signup.
