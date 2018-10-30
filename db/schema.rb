@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_30_100138) do
+ActiveRecord::Schema.define(version: 2018_10_30_182956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,7 +59,9 @@ ActiveRecord::Schema.define(version: 2018_10_30_100138) do
     t.string "referent"
     t.string "address"
     t.integer "city_id"
+    t.boolean "deleted", default: false
     t.index ["city_id"], name: "index_providers_on_city_id"
+    t.index ["deleted"], name: "index_providers_on_deleted"
     t.index ["email"], name: "index_providers_on_email"
     t.index ["user_id"], name: "index_providers_on_user_id"
   end
@@ -98,6 +100,8 @@ ActiveRecord::Schema.define(version: 2018_10_30_100138) do
     t.integer "app_role", default: 0
     t.boolean "is_active", default: false
     t.string "signup_token"
+    t.boolean "deleted", default: false
+    t.index ["deleted"], name: "index_users_on_deleted"
     t.index ["email"], name: "index_users_on_email"
     t.index ["remember_token"], name: "index_users_on_remember_token"
     t.index ["signup_token"], name: "index_users_on_signup_token"

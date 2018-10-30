@@ -50,8 +50,7 @@ module Admin
       provider = if requested_resource.provider?
         requested_resource.provider
       end
-      if requested_resource.destroy
-        provider.destroy if provider
+      if requested_resource.soft_delete!
         flash[:notice] = translate_with_resource("destroy.success")
       else
         flash[:error] = requested_resource.errors.full_messages.join("<br/>")
@@ -72,8 +71,9 @@ module Admin
     private
 
     def scoped_resource
-      return User.all if current_user.administrator?
-      User.where(id: current_user.id)
+      base_scope = User.alive
+      return base_scope if current_user.administrator?
+      base_scope.where(id: current_user.id)
     end
   end
 end

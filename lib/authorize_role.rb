@@ -9,6 +9,10 @@ class AuthorizeRole
           controller == 'admin/users' &&
             %w[destroy activate].include?(action)
         },
+        -> {
+          controller == 'admin/providers' &&
+            %w[destroy].include?(action)
+        },
       ].find do |condition|
         condition.call
       end

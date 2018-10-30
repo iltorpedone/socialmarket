@@ -1,21 +1,21 @@
 module Admin
   class ProvidersController < Admin::ApplicationController
-    # To customize the behavior of this controller,
-    # you can overwrite any of the RESTful actions. For example:
-    #
-    # def index
-    #   super
-    #   @resources = Provider.
-    #     page(params[:page]).
-    #     per(10)
-    # end
 
-    # Define a custom finder by overriding the `find_resource` method:
-    # def find_resource(param)
-    #   Provider.find_by!(slug: param)
-    # end
+    def destroy
+      if requested_resource.soft_delete!
+        flash[:notice] = translate_with_resource("destroy.success")
+      else
+        flash[:error] = requested_resource.errors.full_messages.join("<br/>")
+      end
+      redirect_to action: :index
+    end
 
-    # See https://administrate-prototype.herokuapp.com/customizing_controller_actions
-    # for more information
+    private
+
+    def scoped_resource
+      base_scope = Provider.alive
+      return base_scope if current_user.administrator?
+      base_scope.where(id: current_user.provider.id)
+    end
   end
 end

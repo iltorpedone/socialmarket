@@ -48,8 +48,8 @@ User.create(
   - [x] Once the user completes their profile, a confirmation e-mail is sent to the administrators.
   - [x] Once an administrator confirms the user, the user is able to login.
 - [x] Once a user is created, their role cannot be modified.
-- [ ] Soft deletion of users:
-  - [ ] deleted:boolean defalt=false
+- [x] Soft deletion of users:
+  - [x] deleted:boolean defalt=false
 - [ ] when creating a new `Beneficiary`, once a `Provider` is selected, populate the `city` field using `Provider.city`.
 - [ ] Beneficiary: split `full_name` in `first_name` and `last_name`
 - [ ] Beneficiary: add `gender: Enum(male|female)`
