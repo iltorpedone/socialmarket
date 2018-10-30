@@ -11,6 +11,7 @@ class UserDashboard < Administrate::BaseDashboard
     id: Field::Number,
     full_name: Field::String,
     email: Field::String,
+    is_active: Field::Boolean,
     password: Field::Password,
     app_role: AppRoleField,
     created_at: Field::DateTime,
@@ -27,6 +28,7 @@ class UserDashboard < Administrate::BaseDashboard
     :full_name,
     :email,
     :app_role,
+    :is_active,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -36,6 +38,7 @@ class UserDashboard < Administrate::BaseDashboard
     :full_name,
     :email,
     :app_role,
+    :is_active,
     :created_at,
     :updated_at,
   ].freeze
@@ -46,8 +49,8 @@ class UserDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :full_name,
     :email,
-    :password,
     :app_role,
+    :is_active,
   ].freeze
 
   # Overwrite this method to customize how users are displayed

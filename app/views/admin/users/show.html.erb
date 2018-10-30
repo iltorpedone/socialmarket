@@ -43,7 +43,7 @@ as well as a link to its edit page.
       </dt>
 
       <dd class="attribute-data attribute-data--<%=attribute.html_class%>">
-        <% if attribute.name == 'app_role' %>
+        <% if attribute.name == 'app_role' && page.resource.provider? %>
           <%= link_to admin_provider_path(page.resource.provider.id) do %>
             <%= render_field attribute, page: page %>
           <% end %>

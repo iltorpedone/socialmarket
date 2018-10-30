@@ -3,6 +3,7 @@ class AuthorizeRole
   include ActiveModel::Model
 
   def can?
+    return false if block_user_deletion
     case user.app_role
     when 'administrator' then true
     when 'provider' then can_provider?
@@ -32,5 +33,11 @@ class AuthorizeRole
   def can_warehouse_worker?
     # TODO: implement me
     true
+  end
+
+  private
+
+  def block_user_deletion
+    controller == 'admin/users' && action == 'destroy' && !user.administrator?
   end
 end

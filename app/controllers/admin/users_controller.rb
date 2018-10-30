@@ -2,6 +2,7 @@ module Admin
   class UsersController < Admin::ApplicationController
     def create
       resource = resource_class.new(resource_params)
+      resource.password = SecureRandom.hex(16) # sets this randomly because Clearance validations require it but the user is not active at this point.
       authorize_resource(resource)
 
       if resource.save
@@ -55,10 +56,8 @@ module Admin
     private
 
     def scoped_resource
-      unless current_user.administrator?
-        User.where(id: current_user.id)
-      end
-      User.all
+      return User.all if current_user.administrator?
+      User.where(id: current_user.id)
     end
   end
 end

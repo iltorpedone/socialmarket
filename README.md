@@ -2,6 +2,19 @@
 
 https://socialmarket-it.herokuapp.com
 
+## Seed administrators
+
+```
+heroku run rails console
+User.create(
+  full_name: 'Foo Bar',
+  email: 'foo@bar.com',
+  password: 'foobar-Spam3gg',
+  app_role: :administrator,
+  is_active: true,
+)
+```
+
 ## TODO
 
 - [x] Add the relation between users and providers
@@ -29,8 +42,8 @@ https://socialmarket-it.herokuapp.com
   - address
   - city
 - [ ] User creation:
-  - [ ] When the administrator creates a `User`, he doesn't specify the `password`.
-  - [ ] A new user is not active by default.
+  - [x] When the administrator creates a `User`, he doesn't specify the `password`.
+  - [x] A new user is not active by default.
   - [ ] After the administrator create a `User`, an e-mail is sent to the user's e-mail address, containing a signup link that when opened by anyone allows **just** the completion of the signup.
   - [ ] Once the user completes their profile, a confirmation e-mail is sent to the administrators.
   - [ ] Once an administrator confirms the user, the user is able to login.
