@@ -17,7 +17,11 @@ Rails.application.routes.draw do
       resources :shopping_items
     end
     resources :shopping_items
-    resources :users
+    resources :users do
+      member do
+        put :activate
+      end
+    end
     resources :warehouse_items
 
     root to: "beneficiaries#index"

@@ -6,5 +6,6 @@
   </head>
   <body>
     L'utente <%= link_to @user.full_name, admin_user_url(@user) %> ha completato il suo profilo.
+    Accedi al suo <%= link_to 'profilo', admin_user_url(@user) %> per attivarlo o cancellarlo.
   </body>
 </html>

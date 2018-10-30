@@ -3,7 +3,18 @@ class AuthorizeRole
   include ActiveModel::Model
 
   def can?
-    return false if block_user_deletion
+    if !user.administrator?
+      found = [
+        -> {
+          controller == 'admin/users' &&
+            %w[destroy activate].include?(action)
+        },
+      ].find do |condition|
+        condition.call
+      end
+      return false if found
+    end
+
     case user.app_role
     when 'administrator' then true
     when 'provider' then can_provider?
@@ -33,11 +44,5 @@ class AuthorizeRole
   def can_warehouse_worker?
     # TODO: implement me
     true
-  end
-
-  private
-
-  def block_user_deletion
-    controller == 'admin/users' && action == 'destroy' && !user.administrator?
   end
 end

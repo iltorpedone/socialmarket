@@ -32,6 +32,17 @@ as well as a link to its edit page.
   </div>
 </header>
 
+<% if current_user.administrator? %>
+  <% if page.resource.signup_token.present? %>
+    <p>L'utente non ha ancora completato il suo profilo.</p>
+  <% else %>
+    <% unless page.resource.is_active? %>
+      <%= link_to 'Attiva', activate_admin_user_path(page.resource), method: :put %>
+    <% end %>
+  <% end %>
+  <%= link_to 'Cancella', admin_user_path(page.resource), method: :delete %>
+<% end %>
+
 <section class="main-content__body">
   <dl>
     <% page.attributes.each do |attribute| %>

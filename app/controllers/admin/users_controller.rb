@@ -58,6 +58,16 @@ module Admin
       redirect_to action: :index
     end
 
+    def activate
+      user = User.find(params[:id])
+      user.make_active!
+      UserMailer.
+        with(user: user).
+        activation.
+        deliver_now
+      redirect_to admin_user_path(user), notice: 'Utente attivato.'
+    end
+
     private
 
     def scoped_resource
