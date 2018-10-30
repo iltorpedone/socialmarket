@@ -45,7 +45,7 @@ User.create(
   - [x] When the administrator creates a `User`, he doesn't specify the `password`.
   - [x] A new user is not active by default.
   - [x] After the administrator create a `User`, an e-mail is sent to the user's e-mail address, containing a signup link that when opened by anyone allows **just** the completion of the signup.
-  - [ ] Once the user completes their profile, a confirmation e-mail is sent to the administrators.
+  - [x] Once the user completes their profile, a confirmation e-mail is sent to the administrators.
   - [ ] Once an administrator confirms the user, the user is able to login.
 - [ ] Once a user is created, their role cannot be modified.
 - [ ] Soft deletion of users:

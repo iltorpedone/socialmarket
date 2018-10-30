@@ -11,6 +11,7 @@ class SignupCompletionsController < ApplicationController
       is_active: true,
     }
     if @user.update(attributes)
+      AdminMailer.with(user: @user).signup_completion.deliver_now
       redirect_to sign_in_path, notice: 'Ora puoi collegarti.'
     else
       flash[:error] = @user.errors.full_messages.join("\n")

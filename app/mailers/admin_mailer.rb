@@ -19,4 +19,12 @@ class AdminMailer < ApplicationMailer
     @user = params[:user]
     mail(to: @user.email, subject: 'Completa il tuo profilo')
   end
+
+  def signup_completion
+    @user = params[:user]
+    to = User.admin.map do |user|
+      "\"#{user.full_name}\" <#{user.email}>"
+    end
+    mail(to: to, subject: 'Nuovo profilo completato')
+  end
 end
