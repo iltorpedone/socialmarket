@@ -33,7 +33,6 @@ it:
         max_shop_count: Max spese
         current_shop_count: Spese fatte
         frequency: Frequenza
-        contribution: Contributo
         created_at: Creato il
         updated_at: Aggiornato il
 
@@ -76,7 +75,6 @@ it:
     current_shop_count: Spese fatte
     frequency: Frequenza
     extended_at: Proroga
-    contribution: Contributo
     created_at: Creato il
     updated_at: Aggiornato il
     item_categories: Categorie

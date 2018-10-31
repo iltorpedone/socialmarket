@@ -24,7 +24,6 @@ class BeneficiaryDashboard < Administrate::BaseDashboard
     max_shop_count: Field::Number,
     current_shop_count: Field::Number,
     frequency: Field::Number,
-    contribution: Field::String.with_options(searchable: false),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -65,7 +64,6 @@ class BeneficiaryDashboard < Administrate::BaseDashboard
     :max_shop_count,
     :current_shop_count,
     :frequency,
-    :contribution,
     :created_at,
     :updated_at,
   ].freeze
@@ -88,7 +86,6 @@ class BeneficiaryDashboard < Administrate::BaseDashboard
     :max_shop_count,
     :current_shop_count,
     :frequency,
-    :contribution,
   ].freeze
 
   # Overwrite this method to customize how beneficiaries are displayed

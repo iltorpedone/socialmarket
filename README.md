@@ -53,7 +53,7 @@ User.create(
 - [x] when creating a new `Beneficiary`, once a `Provider` is selected, populate the `city` field using `Provider.city`.
 - [x] Beneficiary: split `full_name` in `first_name` and `last_name`
 - [x] Beneficiary: add `gender: Enum(male|female)`
-- [ ] Beneficiary: remove `contribution`
+- [x] Beneficiary: remove `contribution`
 - [ ] Beneficiary: remove `current_shop_count`
 - [ ] Beneficiary: make `current_shop_count` a computed value
 - [ ] Beneficiary: convert `frequency` into an enum: `weekly, half-monthly, monthly`

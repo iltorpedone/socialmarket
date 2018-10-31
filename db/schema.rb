@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_31_225423) do
+ActiveRecord::Schema.define(version: 2018_10_31_231256) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 2018_10_31_225423) do
     t.integer "current_shop_count"
     t.integer "frequency"
     t.integer "provider_id"
-    t.decimal "contribution"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "is_active", default: false
