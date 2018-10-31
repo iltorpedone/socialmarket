@@ -84,7 +84,6 @@ class BeneficiaryDashboard < Administrate::BaseDashboard
     :children_count,
     :proposed_max_shop_count,
     :max_shop_count,
-    :current_shop_count,
     :frequency,
   ].freeze
 

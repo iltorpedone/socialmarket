@@ -17,4 +17,8 @@ class Beneficiary < ApplicationRecord
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def current_shop_count
+    shoppings.count
+  end
 end

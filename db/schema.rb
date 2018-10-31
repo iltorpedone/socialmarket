@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_31_231256) do
+ActiveRecord::Schema.define(version: 2018_10_31_231506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 2018_10_31_231256) do
     t.integer "family_size"
     t.integer "children_count"
     t.integer "max_shop_count"
-    t.integer "current_shop_count"
     t.integer "frequency"
     t.integer "provider_id"
     t.datetime "created_at", null: false
