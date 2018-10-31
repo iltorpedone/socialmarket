@@ -16,7 +16,7 @@ function updateCityOnProviderSelection() {
   element.addEventListener('change', (event) => {
     const cityId = event.target.value
     if (cityId !== undefined && cityId !== '') {
-      fetch(`/admin/providers/${cityId}/show_json`).
+      fetch(`/admin/providers/${cityId}.json`).
         then((data) => data.json()).
         then((json) => {
           const providerCityId = json.city_id
