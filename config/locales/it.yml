@@ -20,7 +20,8 @@ it:
         is_active: Attivo?
         city: Città
         provider: Ente inviante
-        full_name: Nome completo
+        first_name: Nome
+        last_name: Cognome
         shoppings: Spese
         address: Indirizzo
         telephone: Telefono
@@ -60,6 +61,8 @@ it:
     beneficiary_id: Beneficiario
     city: Città
     full_name: Nome completo
+    first_name: Nome
+    last_name: Cognome
     address: Indirizzo
     telephone: Telefono
     id: ID

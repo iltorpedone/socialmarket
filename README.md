@@ -51,7 +51,7 @@ User.create(
 - [x] Soft deletion of users:
   - [x] deleted:boolean defalt=false
 - [x] when creating a new `Beneficiary`, once a `Provider` is selected, populate the `city` field using `Provider.city`.
-- [ ] Beneficiary: split `full_name` in `first_name` and `last_name`
+- [x] Beneficiary: split `full_name` in `first_name` and `last_name`
 - [ ] Beneficiary: add `gender: Enum(male|female)`
 - [ ] Beneficiary: remove `contribution`
 - [ ] Beneficiary: remove `current_shop_count`

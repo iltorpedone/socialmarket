@@ -12,4 +12,8 @@ class Beneficiary < ApplicationRecord
   def make_active!
     update_columns(is_active: true)
   end
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

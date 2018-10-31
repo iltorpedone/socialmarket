@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_30_182956) do
+ActiveRecord::Schema.define(version: 2018_10_31_224303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "beneficiaries", force: :cascade do |t|
-    t.string "full_name"
     t.string "address"
     t.integer "city_id"
     t.string "telephone"
@@ -31,6 +30,8 @@ ActiveRecord::Schema.define(version: 2018_10_30_182956) do
     t.datetime "updated_at", null: false
     t.boolean "is_active", default: false
     t.integer "proposed_max_shop_count"
+    t.string "first_name"
+    t.string "last_name"
     t.index ["city_id"], name: "index_beneficiaries_on_city_id"
     t.index ["frequency"], name: "index_beneficiaries_on_frequency"
     t.index ["is_active"], name: "index_beneficiaries_on_is_active"
