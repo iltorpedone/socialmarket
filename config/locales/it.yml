@@ -14,7 +14,12 @@ it:
               required: Il campo utente è richiesto.
             city:
               required: Il campo città è richiesto.
-  genders:
+  enums:
+    administrator: Amministratore
+    beneficiary: Beneficiario
+    provider: Ente inviante
+    shop: Negozio
+    warehouse_worker: Magazzino
     male: Maschile ♂
     female: Femminile ♀
   helpers:
@@ -97,9 +102,3 @@ it:
     email: E-mail
     app_role: Ruolo
     is_active: Attivo?
-  app_roles:
-    administrator: Amministratore
-    beneficiary: Beneficiario
-    provider: Ente inviante
-    shop: Negozio
-    warehouse_worker: Magazzino

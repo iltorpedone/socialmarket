@@ -15,7 +15,7 @@ class BeneficiaryDashboard < Administrate::BaseDashboard
     id: Field::Number,
     first_name: Field::String,
     last_name: Field::String,
-    gender: Field::GenderField,
+    gender: EnumField.with_options(mapping: Beneficiary.genders),
     address: Field::String,
     telephone: Field::String,
     family_size: Field::Number,
