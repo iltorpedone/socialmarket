@@ -62,6 +62,13 @@ it:
     warehouse_items: Magazzino
     warehouse_item: Prodotto
   resource_attributes:
+    family_components_count_0_1: N.° fam. 0-1
+    family_components_count_2_5: N.° fam. 2-5
+    family_components_count_6_12: N.° fam. 6-12
+    family_components_count_13_18: N.° fam. 13-18
+    family_components_count_19_30: N.° fam. 19-30
+    family_components_count_30_65: N.° fam. 30-65
+    family_components_count_over_65: N.° fam. > 65
     referent: Referente
     code: Codice
     shoppings: Spese

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_31_231748) do
+ActiveRecord::Schema.define(version: 2018_10_31_233758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2018_10_31_231748) do
     t.string "address"
     t.integer "city_id"
     t.string "telephone"
-    t.integer "family_size"
     t.integer "children_count"
     t.integer "max_shop_count"
     t.integer "frequency", default: 0
@@ -31,6 +30,13 @@ ActiveRecord::Schema.define(version: 2018_10_31_231748) do
     t.string "first_name"
     t.string "last_name"
     t.integer "gender", default: 0
+    t.integer "family_components_count_0_1"
+    t.integer "family_components_count_2_5"
+    t.integer "family_components_count_6_12"
+    t.integer "family_components_count_13_18"
+    t.integer "family_components_count_19_30"
+    t.integer "family_components_count_30_65"
+    t.integer "family_components_count_over_65"
     t.index ["city_id"], name: "index_beneficiaries_on_city_id"
     t.index ["frequency"], name: "index_beneficiaries_on_frequency"
     t.index ["gender"], name: "index_beneficiaries_on_gender"
