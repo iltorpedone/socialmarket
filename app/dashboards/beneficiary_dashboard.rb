@@ -16,6 +16,7 @@ class BeneficiaryDashboard < Administrate::BaseDashboard
     first_name: Field::String,
     last_name: Field::String,
     gender: EnumField.with_options(mapping: Beneficiary.genders),
+    frequency: EnumField.with_options(mapping: Beneficiary.frequencies),
     address: Field::String,
     telephone: Field::String,
     family_size: Field::Number,
@@ -23,7 +24,6 @@ class BeneficiaryDashboard < Administrate::BaseDashboard
     proposed_max_shop_count: Field::Number,
     max_shop_count: Field::Number,
     current_shop_count: Field::Number,
-    frequency: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze

@@ -3,6 +3,7 @@ class Beneficiary < ApplicationRecord
   belongs_to :city
   has_many :shoppings
   enum gender: [ :female, :male ]
+  enum frequency: [ :weekly, :half_monthly, :monthly ]
 
   scope :active, -> { where(is_active: true) }
 

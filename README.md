@@ -56,7 +56,7 @@ User.create(
 - [x] Beneficiary: remove `contribution`
 - [x] Beneficiary: remove `current_shop_count`
 - [x] Beneficiary: make `current_shop_count` a computed value
-- [ ] Beneficiary: convert `frequency` into an enum: `weekly, half-monthly, monthly`
+- [x] Beneficiary: convert `frequency` into an enum: `weekly, half-monthly, monthly`
 - [ ] Beneficiary: convert `family_size` into multiple integer fields, each of them presented as a drop down with `0..15` as the available range:
   - `family_components_count_0_1`
   - `family_components_count_2_5`
