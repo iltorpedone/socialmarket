@@ -10,7 +10,7 @@
 function updateCityOnProviderSelection() {
   const element = document.querySelector('#beneficiary_provider_id')
   const target = document.querySelector('#beneficiary_city_id')
-  if (element === undefined) {
+  if (element === undefined || element === null) {
     return
   }
   element.addEventListener('change', (event) => {
