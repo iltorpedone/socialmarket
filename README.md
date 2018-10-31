@@ -50,7 +50,7 @@ User.create(
 - [x] Once a user is created, their role cannot be modified.
 - [x] Soft deletion of users:
   - [x] deleted:boolean defalt=false
-- [ ] when creating a new `Beneficiary`, once a `Provider` is selected, populate the `city` field using `Provider.city`.
+- [x] when creating a new `Beneficiary`, once a `Provider` is selected, populate the `city` field using `Provider.city`.
 - [ ] Beneficiary: split `full_name` in `first_name` and `last_name`
 - [ ] Beneficiary: add `gender: Enum(male|female)`
 - [ ] Beneficiary: remove `contribution`
@@ -105,3 +105,4 @@ User.create(
 - [ ] create a better style for the login page
 - [ ] create a better style for the beneficiary confirmation page
 - [ ] create a better style for the beneficiary's max shop count confirmation page
+- [ ] Avoid hardcoded routes in JS
