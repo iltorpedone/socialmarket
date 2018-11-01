@@ -67,7 +67,7 @@ User.create(
   - `family_components_count_over_65`
 - [x] Beneficiary: create a `family_size` with the sum of all the `family_components_*`
 - [ ] `Shopping::new`
-  - [ ] remove the string "beneficiario" from the names of each `Beneficiary`.
+  - [x] remove the string "beneficiario" from the names of each `Beneficiary`.
   - [ ] autocomplete the name of the `Beneficiary` #evolutive
   - [ ] when selecting a `Beneficiary`, shows their info
   - [ ] remove `code`

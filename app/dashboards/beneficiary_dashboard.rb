@@ -111,6 +111,6 @@ class BeneficiaryDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(beneficiary)
-    "Beneficiario #{beneficiary.full_name} [##{beneficiary.id}]"
+    "#{beneficiary.full_name} [##{beneficiary.id}]"
   end
 end
