@@ -57,7 +57,7 @@ User.create(
 - [x] Beneficiary: remove `current_shop_count`
 - [x] Beneficiary: make `current_shop_count` a computed value
 - [x] Beneficiary: convert `frequency` into an enum: `weekly, half-monthly, monthly`
-- [x] Beneficiary: convert `family_size` into multiple integer fields, each of them presented as a drop down with `0..15` as the available range: 
+- [x] Beneficiary: convert `family_size` into multiple integer fields, each of them presented as a drop down with `0..15` as the available range:
   - `family_components_count_0_1`
   - `family_components_count_2_5`
   - `family_components_count_6_12`
@@ -65,6 +65,7 @@ User.create(
   - `family_components_count_19_30`
   - `family_components_count_30_65`
   - `family_components_count_over_65`
+- [x] Beneficiary: create a `family_size` with the sum of all the `family_components_*`
 - [ ] `Shopping::new`
   - [ ] remove the string "beneficiario" from the names of each `Beneficiary`.
   - [ ] autocomplete the name of the `Beneficiary` #evolutive
