@@ -70,7 +70,7 @@ User.create(
   - [x] remove the string "beneficiario" from the names of each `Beneficiary`.
   - [ ] autocomplete the name of the `Beneficiary` #evolutive
   - [x] when selecting a `Beneficiary`, shows their info
-  - [ ] remove `code`
+  - [x] remove `code`
   - [ ] after the shopping has been created, redirect to the page to add new shopping items
 - [ ] new shopping items:
   - [ ] in the new shopping items page show the info about the `Beneficiary` and the updated stats of the current `Shopping`, showing the shopping's grand total (initially set to € 0)

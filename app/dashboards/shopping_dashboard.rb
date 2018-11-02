@@ -14,7 +14,6 @@ class ShoppingDashboard < Administrate::BaseDashboard
     ),
     provider: Field::BelongsTo.with_options(order: 'name'),
     id: Field::Number,
-    code: Field::String,
     total: Field::String.with_options(searchable: false),
     items: Field::HasMany.with_options(class_name: 'ShoppingItem'),
     created_at: Field::DateTime,
@@ -29,8 +28,8 @@ class ShoppingDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :beneficiary,
     :provider,
+    :total,
     :id,
-    :code,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -39,7 +38,6 @@ class ShoppingDashboard < Administrate::BaseDashboard
     :beneficiary,
     :provider,
     :id,
-    :code,
     :total,
     :items,
     :created_at,
@@ -52,7 +50,6 @@ class ShoppingDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :beneficiary,
     :provider,
-    :code,
     # :total,
     # :items,
   ].freeze
