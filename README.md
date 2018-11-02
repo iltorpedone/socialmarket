@@ -69,7 +69,7 @@ User.create(
 - [ ] `Shopping::new`
   - [x] remove the string "beneficiario" from the names of each `Beneficiary`.
   - [ ] autocomplete the name of the `Beneficiary` #evolutive
-  - [ ] when selecting a `Beneficiary`, shows their info
+  - [/] when selecting a `Beneficiary`, shows their info
   - [ ] remove `code`
   - [ ] after the shopping has been created, redirect to the page to add new shopping items
 - [ ] new shopping items:

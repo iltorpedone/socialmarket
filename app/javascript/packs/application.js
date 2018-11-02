@@ -28,4 +28,22 @@ function updateCityOnProviderSelection() {
   })
 }
 
+function showBeneficiaryOnNewShopping() {
+  const element = document.querySelector('#new_shopping #shopping_beneficiary_id')
+  const target = document.querySelector('#new_shopping #beneficiary-info .field-unit__field')
+  if (element === undefined || element === null) {
+    return
+  }
+  element.addEventListener('change', (event) => {
+    const beneficiaryId = event.target.value
+    if (beneficiaryId === undefined || beneficiaryId === '') {
+      return
+    }
+    fetch(`/admin/beneficiaries/${beneficiaryId}.html`).
+      then((data) => data.text()).
+      then((text) => target.innerHTML = text) // TODO: continue here
+  })
+}
+
 updateCityOnProviderSelection()
+showBeneficiaryOnNewShopping()

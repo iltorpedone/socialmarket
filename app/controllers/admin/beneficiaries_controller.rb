@@ -1,5 +1,21 @@
 module Admin
   class BeneficiariesController < Admin::ApplicationController
+    def show
+      respond_to do |format|
+        format.json { render json: requested_resource }
+        format.html do
+          # TODO: detect the request (maybe using an extra parameter?) and render accordingly (layout: false, no buttons, etc.)
+          if request.xhr?
+            render locals: { requested_resource: requested_resource }
+          else
+            render locals: {
+              page: Administrate::Page::Show.new(dashboard, requested_resource),
+            }
+          end
+        end
+      end
+    end
+
     def create
       resource = resource_class.new(resource_params)
       if current_user.provider?
