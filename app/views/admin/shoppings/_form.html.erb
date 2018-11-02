@@ -38,12 +38,12 @@ and renders all form fields for a resource's editable attributes.
       <%= render_field attribute, f: f %>
     </div>
     <% if attribute.attribute == :beneficiary %>
-      <!-- TODO: hide me or show a placeholder -->
       <div id="beneficiary-info" class="field-unit">
         <div class="field-unit__label">
           Info beneficiario
         </div>
         <div class="field-unit__field">
+          <i>Seleziona un beneficiario per visualizzare qui le sue informazioni.</i>
         </div>
       </div>
     <% end %>
