@@ -74,7 +74,7 @@ User.create(
   - [x] when a beneficiary is selected, set the corresponding provider
   - [x] after the shopping has been created, redirect to the page to add new shopping items
 - [ ] new shopping items:
-  - [ ] in the new shopping items page show the info about the `Beneficiary` and the updated stats of the current `Shopping`, showing the shopping's grand total (initially set to € 0)
+  - [x] in the new shopping items page show the info about the `Beneficiary` and the updated stats of the current `Shopping`, showing the shopping's grand total (initially set to € 0)
   - [ ] dynamic add
     ```
       [ pasta ] -> categoria
