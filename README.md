@@ -71,6 +71,7 @@ User.create(
   - [ ] autocomplete the name of the `Beneficiary` #evolutive
   - [x] when selecting a `Beneficiary`, shows their info
   - [x] remove `code`
+  - [x] when a beneficiary is selected, set the corresponding provider
   - [ ] after the shopping has been created, redirect to the page to add new shopping items
 - [ ] new shopping items:
   - [ ] in the new shopping items page show the info about the `Beneficiary` and the updated stats of the current `Shopping`, showing the shopping's grand total (initially set to € 0)

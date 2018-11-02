@@ -44,6 +44,10 @@ function showBeneficiaryOnNewShopping() {
     fetch(`/admin/beneficiaries/${beneficiaryId}.html?${params.toString()}`).
       then((data) => data.text()).
       then((text) => target.innerHTML = text)
+    const targetProviderElement = document.querySelector('#new_shopping #shopping_provider_id')
+    fetch(`/admin/beneficiaries/${beneficiaryId}.json`).
+      then((data) => data.json()).
+      then((json) => targetProviderElement.value = json.provider_id)
   })
 }
 
