@@ -31,9 +31,11 @@ it:
         is_active: Attivo?
         city: Città
         provider: Ente inviante
+        full_name: Nome completo
         first_name: Nome
         last_name: Cognome
         shoppings: Spese
+        gender: Sesso
         address: Indirizzo
         telephone: Telefono
         family_size: Nucleo familiare

@@ -5,12 +5,14 @@ module Admin
         format.json { render json: requested_resource }
         format.html do
           # TODO: detect the request (maybe using an extra parameter?) and render accordingly (layout: false, no buttons, etc.)
-          if request.xhr?
-            render locals: { requested_resource: requested_resource }
+          page = Administrate::Page::Show.new(
+            dashboard,
+            requested_resource,
+          )
+          if params[:fragment]
+            render('info', locals: { object: requested_resource }, layout: false)
           else
-            render locals: {
-              page: Administrate::Page::Show.new(dashboard, requested_resource),
-            }
+            render(locals: { page: page })
           end
         end
       end

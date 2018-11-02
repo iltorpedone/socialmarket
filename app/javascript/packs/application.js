@@ -39,9 +39,11 @@ function showBeneficiaryOnNewShopping() {
     if (beneficiaryId === undefined || beneficiaryId === '') {
       return
     }
-    fetch(`/admin/beneficiaries/${beneficiaryId}.html`).
+    const params = new URLSearchParams
+    params.set('fragment', true)
+    fetch(`/admin/beneficiaries/${beneficiaryId}.html?${params.toString()}`).
       then((data) => data.text()).
-      then((text) => target.innerHTML = text) // TODO: continue here
+      then((text) => target.innerHTML = text)
   })
 }
 
