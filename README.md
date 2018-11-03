@@ -73,6 +73,11 @@ User.create(
   - [x] remove `code`
   - [x] when a beneficiary is selected, set the corresponding provider
   - [x] after the shopping has been created, redirect to the page to add new shopping items
+- [ ] warehouse items index page:
+  - [ ] rename `price` into `unitary_amount`
+  - [ ] rename `code` into `name`
+  - [ ] order by `item_category.name`, `name`
+  - [ ] remove `description`
 - [ ] new shopping items:
   - [x] in the new shopping items page show the info about the `Beneficiary` and the updated stats of the current `Shopping`, showing the shopping's grand total (initially set to € 0)
   - [ ] dynamic add
@@ -91,11 +96,6 @@ User.create(
 
       [ aggiungi ]
     ```
-- [ ] warehouse items index page:
-  - [ ] rename `price` into `unitary_amount`
-  - [ ] rename `code` into `name`
-  - [ ] order by `item_category.name`, `name`
-  - [ ] remove `description`
 - [ ] Close shopping:
   - [ ] in new shopping items, add a "soft close" button that once clicked, just sets a `soft_closed` field
   - [ ] in the shopping index and show pages:
