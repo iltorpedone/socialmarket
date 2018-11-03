@@ -24,8 +24,13 @@ module Admin
 
     def scoped_resource
       base_scope = Provider.alive
-      return base_scope if current_user.administrator?
-      base_scope.where(id: current_user.provider.id)
+      if current_user.administrator?
+        return base_scope
+      end
+      if current_user.provider?
+        return base_scope.where(id: current_user.provider.id)
+      end
+      Provider.none
     end
   end
 end
