@@ -13,7 +13,7 @@ class UserDashboard < Administrate::BaseDashboard
     email: Field::String,
     is_active: Field::Boolean,
     password: Field::Password,
-    app_role: EnumField.with_options(mapping: User.roles),
+    app_role: EnumField.with_options(mapping: User.app_roles),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
