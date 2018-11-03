@@ -71,11 +71,26 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.mailgun.org',
+    port: 465,
+    user_name: 'socialmarket@mg.olisti.co',
+    password: Rails.application.credentials.mailgun_password,
+    authentication: :plain,
+    # enable_starttls_auto: true, # => defaults to `true`
+  }
+
   config.action_mailer.default_url_options = {
     protocol: 'https',
     host: 'www.socialmarketnordmi.org',
   }
 
+  # config.action_mailer.perform_deliveries = true # => defaults to `true`
+  config.action_mailer.default_options = {
+    from: 'socialmarket@olisti.co',
+    reply_to: 'socialmarket@olisti.co',
+  }
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
