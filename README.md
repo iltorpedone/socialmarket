@@ -96,6 +96,13 @@ User.create(
 
       [ aggiungi ]
     ```
+    - [x] add a category select that performs a json request
+    - [ ] json response: for each item render an input row
+    - [ ] input rows: when the amount changes, update the row total and the current shopping total
+    - [ ] add button perform a post request that persists the items with quantity > 0
+    - [ ] the add action completes by reloading the page
+    - [ ] for each item in the current shopping, show the code, quantity, total, category and a delete button
+    - [ ] the delete action reloads the page
 - [ ] Close shopping:
   - [ ] in new shopping items, add a "soft close" button that once clicked, just sets a `soft_closed` field
   - [ ] in the shopping index and show pages:

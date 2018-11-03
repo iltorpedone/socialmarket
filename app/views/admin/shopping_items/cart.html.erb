@@ -1,0 +1,13 @@
+<section class="main-content__body">
+  <h1>Spesa corrente</h1>
+  <%= render partial: 'admin/shoppings/stats', locals: { object: @form.shopping } %>
+
+  <h2>Beneficiario</h2>
+  <%= render partial: 'admin/beneficiaries/info', locals: { object: @form.beneficiary } %>
+</section>
+
+<section class="form-fragment center w-50 tc">
+  <%= label_tag :category, 'Categoria' %>
+  <%= select_tag(:category, options_from_collection_for_select(ItemCategory.ordered, 'id', 'name'), class: '', data: { shopping_category: true }, include_blank: true) %>
+
+</section>

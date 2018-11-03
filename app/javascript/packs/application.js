@@ -51,5 +51,26 @@ function showBeneficiaryOnNewShopping() {
   })
 }
 
+function cartCategoryButton() {
+  const element = document.querySelector('[data-shopping-category]')
+  if (element === undefined || element === null) {
+    return
+  }
+  element.addEventListener('change', (event) => {
+    const itemCategoryId = event.target.value
+    if (itemCategoryId === undefined || itemCategoryId === '') {
+      return
+    }
+    const params = new URLSearchParams
+    params.set('item_category_id', itemCategoryId)
+    fetch(`/admin/warehouse_items.json?${params.toString()}`).
+      then((data) => data.json()).
+      then((json) => {
+        console.log(json)
+      })
+  })
+}
+
 updateCityOnProviderSelection()
 showBeneficiaryOnNewShopping()
+cartCategoryButton()

@@ -16,10 +16,7 @@ module Admin
       authorize_resource(resource)
 
       if resource.save
-        redirect_to(
-          new_admin_shopping_shopping_item_path(resource.id),
-          notice: translate_with_resource("create.success"),
-        )
+        redirect_to cart_admin_shopping_shopping_items(resource.id)
       else
         render :new, locals: {
           page: Administrate::Page::Form.new(dashboard, resource),

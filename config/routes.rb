@@ -14,7 +14,12 @@ Rails.application.routes.draw do
     resources :item_categories
     resources :providers
     resources :shoppings do
-      resources :shopping_items
+      resources :shopping_items do
+        collection do
+          get :cart
+          post :bulk_add
+        end
+      end
     end
     resources :shopping_items
     resources :users do
