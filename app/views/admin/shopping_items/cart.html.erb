@@ -9,5 +9,7 @@
 <section class="form-fragment center w-50 tc">
   <%= label_tag :category, 'Categoria' %>
   <%= select_tag(:category, options_from_collection_for_select(ItemCategory.ordered, 'id', 'name'), class: '', data: { shopping_category: true }, include_blank: true) %>
-
 </section>
+
+<div data-items-container>
+</div>

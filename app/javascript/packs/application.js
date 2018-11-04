@@ -56,6 +56,7 @@ function cartCategoryButton() {
   if (element === undefined || element === null) {
     return
   }
+  const itemsContainer = document.querySelector('[data-items-container]')
   element.addEventListener('change', (event) => {
     const itemCategoryId = event.target.value
     if (itemCategoryId === undefined || itemCategoryId === '') {
@@ -63,11 +64,10 @@ function cartCategoryButton() {
     }
     const params = new URLSearchParams
     params.set('item_category_id', itemCategoryId)
-    fetch(`/admin/warehouse_items.json?${params.toString()}`).
-      then((data) => data.json()).
-      then((json) => {
-        console.log(json)
-      })
+    params.set('inputs', true)
+    fetch(`/admin/warehouse_items.html?${params.toString()}`).
+      then((data) => data.text()).
+      then((text) => itemsContainer.innerHTML = text)
   })
 }
 
