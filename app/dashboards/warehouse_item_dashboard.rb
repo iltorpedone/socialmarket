@@ -10,9 +10,9 @@ class WarehouseItemDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     item_category: Field::BelongsTo.with_options(order: 'name'),
     id: Field::Number,
-    code: Field::String,
+    name: Field::String,
     description: Field::Text,
-    price: Field::String.with_options(searchable: false),
+    unitary_amount: Field::String.with_options(searchable: false),
     stock_count: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -26,7 +26,7 @@ class WarehouseItemDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :item_category,
     :id,
-    :code,
+    :name,
     :description,
   ].freeze
 
@@ -35,9 +35,9 @@ class WarehouseItemDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :item_category,
     :id,
-    :code,
+    :name,
     :description,
-    :price,
+    :unitary_amount,
     :stock_count,
     :created_at,
     :updated_at,
@@ -48,9 +48,9 @@ class WarehouseItemDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :item_category,
-    :code,
+    :name,
     :description,
-    :price,
+    :unitary_amount,
     :stock_count,
   ].freeze
 
@@ -58,6 +58,6 @@ class WarehouseItemDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(warehouse_item)
-    "Prodotto cod. #{warehouse_item.code}"
+    warehouse_item.name
   end
 end

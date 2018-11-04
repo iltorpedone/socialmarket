@@ -26,7 +26,7 @@ module Admin
     private
 
     def scoped_resource
-      scope = WarehouseItem.all
+      scope = WarehouseItem.ordered
       if params[:item_category_id].present?
         scope.where(item_category_id: params[:item_category_id])
       else

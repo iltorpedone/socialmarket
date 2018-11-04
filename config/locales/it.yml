@@ -114,3 +114,4 @@ it:
     email: E-mail
     app_role: Ruolo
     is_active: Attivo?
+    unitary_amount: Importo unitario
