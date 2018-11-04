@@ -4,7 +4,6 @@ module Admin
       respond_to do |format|
         format.json { render json: requested_resource }
         format.html do
-          # TODO: detect the request (maybe using an extra parameter?) and render accordingly (layout: false, no buttons, etc.)
           page = Administrate::Page::Show.new(
             dashboard,
             requested_resource,
