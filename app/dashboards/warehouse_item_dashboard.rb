@@ -11,7 +11,6 @@ class WarehouseItemDashboard < Administrate::BaseDashboard
     item_category: Field::BelongsTo.with_options(order: 'name'),
     id: Field::Number,
     name: Field::String,
-    description: Field::Text,
     unitary_amount: Field::String.with_options(searchable: false),
     stock_count: Field::Number,
     created_at: Field::DateTime,
@@ -27,7 +26,6 @@ class WarehouseItemDashboard < Administrate::BaseDashboard
     :item_category,
     :id,
     :name,
-    :description,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -36,7 +34,6 @@ class WarehouseItemDashboard < Administrate::BaseDashboard
     :item_category,
     :id,
     :name,
-    :description,
     :unitary_amount,
     :stock_count,
     :created_at,
@@ -49,7 +46,6 @@ class WarehouseItemDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :item_category,
     :name,
-    :description,
     :unitary_amount,
     :stock_count,
   ].freeze
