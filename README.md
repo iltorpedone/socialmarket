@@ -117,3 +117,4 @@ User.create(
 - [ ] Avoid hardcoded routes in JS
 - [ ] bulk add in cart: handle properly errors
 - [ ] shopping#index: apply an ordering
+- [ ] cart: when adding an item that's already present in the cart, merge it upon save instead of adding the duplicate
