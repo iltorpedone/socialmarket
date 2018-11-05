@@ -30,6 +30,8 @@ class ShoppingDashboard < Administrate::BaseDashboard
     :provider,
     :total,
     :id,
+    :created_at,
+    :updated_at,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -39,7 +41,7 @@ class ShoppingDashboard < Administrate::BaseDashboard
     :provider,
     :id,
     :total,
-    :items,
+    # :items,
     :created_at,
     :updated_at,
   ].freeze

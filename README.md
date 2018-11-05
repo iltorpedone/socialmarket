@@ -116,3 +116,4 @@ User.create(
 - [ ] create a better style for the beneficiary's max shop count confirmation page
 - [ ] Avoid hardcoded routes in JS
 - [ ] bulk add in cart: handle properly errors
+- [ ] shopping#index: apply an ordering

@@ -9,7 +9,7 @@ class ShoppingItemDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     shopping: Field::BelongsTo.with_options(order: 'created_at'),
-    warehouse_item: Field::BelongsTo.with_options(order: 'code'),
+    warehouse_item: Field::BelongsTo.with_options(order: 'name'),
     id: Field::Number,
     quantity: Field::Number,
     created_at: Field::DateTime,
@@ -52,6 +52,6 @@ class ShoppingItemDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(shopping_item)
-    "##{shopping_item.id} #{shopping_item.warehouse_item.description} x#{shopping_item.quantity} € #{shopping_item.warehouse_item.price * shopping_item.quantity}"
+    "[#{shopping_item.category_name}>#{shopping_item.name}] x#{shopping_item.quantity} = #{shopping_item.price} [##{shopping_item.id}]"
   end
 end

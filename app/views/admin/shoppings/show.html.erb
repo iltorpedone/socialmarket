@@ -24,12 +24,7 @@ as well as a link to its edit page.
   </h1>
 
   <div>
-    <%= link_to(
-      t("administrate.actions.edit_resource", name: page.page_title),
-      [:edit, namespace, page.resource],
-      class: "button",
-    ) if valid_action?(:edit) && show_action?(:edit, page.resource) %>
-    <%= link_to('Vai al carrello', cart_admin_shopping_shopping_items_path(page.resource.id)) %>
+    <%= link_to('Vai al carrello', cart_admin_shopping_shopping_items_path(page.resource.id), class: 'button') %>
   </div>
 </header>
 
@@ -46,5 +41,47 @@ as well as a link to its edit page.
       <dd class="attribute-data attribute-data--<%=attribute.html_class%>"
           ><%= render_field attribute, page: page %></dd>
     <% end %>
+    <dt>Dettaglio</dt>
+    <% @form = CartForm.new(shopping_id: page.resource.id) %>
+    <dd>
+      <table>
+        <thead>
+          <tr>
+            <th>Prodotti</th>
+            <th>Totale unità</th>
+            <th>Importo totale</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= @form.items_count %></td>
+            <td><%= @form.quantity %></td>
+            <td><%= @form.price %></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Categoria</th>
+            <th>Nome</th>
+            <th>Quantità</th>
+            <th>Totale</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @form.shopping.items.each do |item| %>
+            <tr>
+              <td><%= item.category_name %></td>
+              <td><%= item.name %></td>
+              <td><%= item.quantity %></td>
+              <td><%= item.price %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </dd>
   </dl>
 </section>

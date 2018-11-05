@@ -13,6 +13,7 @@ class CartForm
         quantity: item['quantity'],
       )
     end
+    shopping.update_total!
   end
 
   def shopping

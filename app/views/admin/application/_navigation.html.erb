@@ -9,6 +9,7 @@ as defined by the routes in the `admin/` namespace
 
 <nav class="navigation" role="navigation">
   <% Administrate::Namespace.new(namespace).resources.each do |resource| %>
+    <% next if resource.resource == 'shopping_items' %>
     <%= link_to(
       t("resources.#{display_resource_name(resource).parameterize.underscore}"),
       [namespace, resource_index_route_key(resource)],
