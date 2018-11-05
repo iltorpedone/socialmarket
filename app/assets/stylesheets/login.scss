@@ -1,0 +1,66 @@
+$bg-color: #ffe007;
+
+.sign-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  h2 {
+    padding: 1rem 2rem;
+    border: 1px solid #ffd45a;
+    color: white;
+    background: $bg-color;
+    font-family: sans-serif;
+  }
+
+  form {
+    padding: 1rem;
+    border: 1px solid #ffeeaa;
+    background: #cccccc14;
+    font-size: 16px;
+  }
+
+  .text-field,
+  .password-field,
+  .submit-field {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    text-align: right;
+    padding-right: 1rem;
+    label {
+      min-width: 4rem;
+      margin-right: 0.5rem;
+    }
+    input {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+    }
+  }
+
+  .text-field {
+
+  }
+
+  .password-field {
+
+  }
+
+  .submit-field {
+    input {
+      width: 100%;
+      font-size: 16px;
+      background: $bg-color;
+      color: white;
+      text-transform: uppercase;
+      font-weight: bold;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .other-links {
+    text-align: center;
+  }
+}

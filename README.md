@@ -111,7 +111,7 @@ User.create(
 - [ ] in new shopping items
   - [ ] add a "category" select that filters all the products belonging to the selected category: ??? this one should be already implemented
   - [ ] allows the creation inline of a new product belonging to the selected category
-- [ ] create a better style for the login page
+- [x] create a better style for the login page
 - [ ] create a better style for the beneficiary confirmation page
 - [ ] create a better style for the beneficiary's max shop count confirmation page
 - [ ] Avoid hardcoded routes in JS

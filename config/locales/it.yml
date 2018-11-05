@@ -1,4 +1,16 @@
 it:
+  flashes:
+    failure_after_create: Errore nel caricamento.
+  helpers:
+    submit:
+      sessions:
+        create: Create
+        update: Update
+  sessions:
+    form:
+      forgot_password: Recupera password
+    new:
+      title: Social Market
   activerecord:
     models:
       beneficiary: Beneficiario
