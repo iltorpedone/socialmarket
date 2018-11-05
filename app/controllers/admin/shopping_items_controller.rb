@@ -3,6 +3,9 @@ module Admin
 
     def cart
       @form = CartForm.new(user: current_user, shopping_id: params[:shopping_id])
+      unless @form.shopping.opened?
+        redirect_to admin_shopping_path(@form.shopping.id), notice: 'È possibile visualizzare il carrello solo se la spesa è aperta.'
+      end
     end
 
     def bulk_add

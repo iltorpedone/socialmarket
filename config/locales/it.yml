@@ -37,8 +37,19 @@ it:
     weekly: Settimanale
     half_monthly: Bi-settimanale
     monthly: Mensile
+    opened: Aperto 🛒
+    soft_closed: Semi-chiuso 🚧
+    hard_closed: Chiuso 🔒
   helpers:
     label:
+      shopping:
+        status: Stato
+        beneficiary: Beneficiario
+        provider: Ente inviante
+        total: Importo tot.
+        id: ID
+        created_at: Creato il
+        updated_at: Aggiornato il
       beneficiary:
         is_active: Attivo?
         city: Città

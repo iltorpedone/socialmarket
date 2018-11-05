@@ -18,7 +18,7 @@ to display a collection of resources in an HTML table.
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Collection
 %>
 
-<table aria-labelledby="<%= table_title %>">
+<table aria-labelledby="<%= table_title %>" data-shopping-actions>
   <thead>
     <tr>
       <% collection_presenter.attribute_types.each do |attr_name, attr_type| %>
@@ -73,12 +73,52 @@ to display a collection of resources in an HTML table.
         <% end %>
 
         <% if valid_action? :edit, collection_presenter.resource_name %>
-          <td><%= link_to(
-            'Carrello',
-            cart_admin_shopping_shopping_items_path(resource.id),
-            class: "action-edit",
-          ) if show_action? :edit, resource%></td>
+          <td>
+            <% if resource.opened? %>
+              <%= link_to(
+                'Carrello',
+                cart_admin_shopping_shopping_items_path(resource.id),
+                class: "action-edit",
+              ) %>
+            <% else %>
+              -
+            <% end %>
+          </td>
         <% end %>
+
+        <td>
+          <% if resource.opened? %>
+            <%= link_to(
+              '→🚧',
+              admin_shopping_path(resource.id, {shopping: {status: :soft_closed}}),
+              method: :put,
+              title: 'Semi-chiudi',
+              remote: true,
+              data: {disable_with: '...'},
+              class: 'button--action',
+            ) %>
+          <% end %>
+          <% if resource.soft_closed? %>
+            <%= link_to(
+              '🛒←',
+              admin_shopping_path(resource.id, {shopping: {status: :opened}}),
+              method: :put,
+              title: 'Ri-apri',
+              remote: true,
+              data: {disable_with: '💬'},
+              class: 'button--action',
+            ) %>
+            <%= link_to(
+              '→🔒',
+              admin_shopping_path(resource.id, {shopping: {status: :hard_closed}}),
+              method: :put,
+              title: 'Chiudi',
+              remote: true,
+              data: {disable_with: '...', confirm: 'Sei sicuro? La spesa non potrà più essere riaperta.'},
+              class: 'button--action',
+            ) %>
+          <% end %>
+        </td>
 
         <% if valid_action? :destroy, collection_presenter.resource_name %>
           <td><%= link_to(

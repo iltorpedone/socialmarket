@@ -104,10 +104,10 @@ User.create(
     - [x] for each item in the current shopping, show the name, quantity, total, category and a delete button
     - [x] the delete action reloads the page
 - [ ] Close shopping:
-  - [ ] in cart, add a "soft close" button that once clicked, just sets a `soft_closed` field
+  - [x] in cart, add a "soft close" button that once clicked, just sets a `soft_closed` field
   - [ ] in the shopping index and show pages:
-    - [ ] show a "hard close" button that, once clicked, makes it impossible to reopen the shopping list
-    - [ ] is the shopping is “soft closed“ then show a "re-open" button that once clicked allows the edit of the shopping items
+    - [x] show a "hard close" button that, once clicked, makes it impossible to reopen the shopping list
+    - [x] if the shopping is “soft closed“ then show a "re-open" button that once clicked allows the edit of the shopping items
 - [ ] in new shopping items
   - [ ] add a "category" select that filters all the products belonging to the selected category: ??? this one should be already implemented
   - [ ] allows the creation inline of a new product belonging to the selected category

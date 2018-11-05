@@ -16,6 +16,7 @@ class ShoppingDashboard < Administrate::BaseDashboard
     id: Field::Number,
     total: Field::String.with_options(searchable: false),
     items: Field::HasMany.with_options(class_name: 'ShoppingItem'),
+    status: EnumField.with_options(mapping: Shopping.statuses),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -26,6 +27,7 @@ class ShoppingDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
+    :status,
     :beneficiary,
     :provider,
     :total,
@@ -37,6 +39,7 @@ class ShoppingDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
+    :status,
     :beneficiary,
     :provider,
     :id,
@@ -52,6 +55,7 @@ class ShoppingDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :beneficiary,
     :provider,
+    :status,
     # :total,
     # :items,
   ].freeze

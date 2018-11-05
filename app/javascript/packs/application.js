@@ -77,8 +77,15 @@ function setupCartToggle() {
   })
 }
 
+function shoppingIndexLinks() {
+  $('[data-shopping-actions]').on('ajax:complete', (event) => {
+    window.location = window.location.href
+  })
+}
+
 updateCityOnProviderSelection()
 showBeneficiaryOnNewShopping()
 setupCart()
 
 setupCartToggle()
+shoppingIndexLinks()

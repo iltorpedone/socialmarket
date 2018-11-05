@@ -18,14 +18,48 @@ as well as a link to its edit page.
 
 <% content_for(:title) { t("administrate.actions.show_resource", name: page.page_title) } %>
 
-<header class="main-content__header" role="banner">
+<header class="main-content__header" role="banner" data-shopping-actions>
   <h1 class="main-content__page-title">
     <%= content_for(:title) %>
   </h1>
 
-  <div>
-    <%= link_to('Vai al carrello', cart_admin_shopping_shopping_items_path(page.resource.id), class: 'button') %>
-  </div>
+  <% if page.resource.opened? %>
+    <div>
+      <%= link_to('Vai al carrello', cart_admin_shopping_shopping_items_path(page.resource.id), class: 'button') %>
+    </div>
+  <% end %>
+
+  <% if page.resource.opened? %>
+    <%= link_to(
+      '→🚧',
+      admin_shopping_path(page.resource.id, {shopping: {status: :soft_closed}}),
+      method: :put,
+      title: 'Semi-chiudi',
+      remote: true,
+      data: {disable_with: '...'},
+      class: 'button--action',
+    ) %>
+  <% end %>
+  <% if page.resource.soft_closed? %>
+    <%= link_to(
+      '🛒←',
+      admin_shopping_path(page.resource.id, {shopping: {status: :opened}}),
+      method: :put,
+      title: 'Ri-apri',
+      remote: true,
+      data: {disable_with: '💬'},
+      class: 'button--action',
+    ) %>
+    <%= link_to(
+      '→🔒',
+      admin_shopping_path(page.resource.id, {shopping: {status: :hard_closed}}),
+      method: :put,
+      title: 'Chiudi',
+      remote: true,
+      data: {disable_with: '...', confirm: 'Sei sicuro? La spesa non potrà più essere riaperta.'},
+      class: 'button--action',
+    ) %>
+  <% end %>
 </header>
 
 <section class="main-content__body">

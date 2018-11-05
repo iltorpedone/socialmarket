@@ -76,4 +76,17 @@
   <section class="form-fragment center w-50 tc">
     <button data-cart-submit-input type="submit">Aggiungi</button>
   </section>
+
+  <% if @form.shopping.opened? %>
+    <section class="form-fragment center tc">
+      <%= link_to(
+        'Semi-chiudi →🚧',
+        admin_shopping_path(@form.shopping.id, {shopping: {status: :soft_closed}}),
+        method: :put,
+        title: 'Semi-chiudi',
+        data: {disable_with: '...'},
+        class: 'button--action di',
+      ) %>
+    </section>
+  <% end %>
 </section>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_04_101444) do
+ActiveRecord::Schema.define(version: 2018_11_05_204541) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,8 +90,10 @@ ActiveRecord::Schema.define(version: 2018_11_04_101444) do
     t.text "items"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 0
     t.index ["beneficiary_id"], name: "index_shoppings_on_beneficiary_id"
     t.index ["provider_id"], name: "index_shoppings_on_provider_id"
+    t.index ["status"], name: "index_shoppings_on_status"
   end
 
   create_table "users", force: :cascade do |t|
