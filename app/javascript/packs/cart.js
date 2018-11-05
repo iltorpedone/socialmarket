@@ -1,16 +1,43 @@
+function authenticityToken() {
+    return document.querySelector('meta[name=csrf-token]').content
+}
+
 class Cart {
   constructor({ container }) {
     this.container = container
     this.setDefaults()
+    this.shoppingId = container.dataset.shoppingId
     this.domElements = {
       categoryInput: this.container.querySelector('[data-cart-category-input]'),
       itemsCountView: this.container.querySelector('[data-cart-items-count-view]'),
       priceView: this.container.querySelector('[data-cart-price-view]'),
       quantityView: this.container.querySelector('[data-cart-quantity-view]'),
       itemsContainer: this.container.querySelector('[data-cart-items-container]'),
+      submitInput: this.container.querySelector('[data-cart-submit-input]'),
     }
     this.setupCategoryInput()
     this.setupItemsChanges()
+    this.setupSubmitInput()
+  }
+
+  setupSubmitInput() {
+    this.domElements.submitInput.addEventListener('click', this.bulkAdd.bind(this))
+  }
+
+  bulkAdd(event) {
+    event.preventDefault()
+    fetch(`/admin/shoppings/${this.shoppingId}/shopping_items/bulk_add`, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+      },
+      body: JSON.stringify({
+        authenticity_token: authenticityToken(),
+        items: this.items,
+      }),
+    }).
+      then((response) => response.json()).
+      then((json) => window.location = window.location.href)
   }
 
   toPrice(value) {
@@ -100,7 +127,7 @@ class Cart {
   }
 
   updateTotals() {
-    values = Object.values(this.items)
+    const values = Object.values(this.items)
     this.quantity = values.
       map((item) => item.quantity).
       reduce((memo, current) => memo + current, 0)

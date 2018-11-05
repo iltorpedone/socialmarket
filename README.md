@@ -99,19 +99,20 @@ User.create(
     - [x] add a category select that performs a json request
     - [x] json response: for each item render an input row
     - [x] input rows: when the amount changes, update the row total and the current shopping total
-    - [ ] add button perform a post request that persists the items with quantity > 0
-    - [ ] the add action completes by reloading the page
-    - [ ] for each item in the current shopping, show the code, quantity, total, category and a delete button
-    - [ ] the delete action reloads the page
+    - [x] add button perform a post request that persists the items with quantity > 0
+    - [x] the add action completes by reloading the page
+    - [x] for each item in the current shopping, show the name, quantity, total, category and a delete button
+    - [x] the delete action reloads the page
 - [ ] Close shopping:
   - [ ] in new shopping items, add a "soft close" button that once clicked, just sets a `soft_closed` field
   - [ ] in the shopping index and show pages:
     - [ ] show a "hard close" button that, once clicked, makes it impossible to reopen the shopping list
     - [ ] is the shopping is “soft closed“ then show a "re-open" button that once clicked allows the edit of the shopping items
 - [ ] in new shopping items
-  - [ ] add a "category" select that filters all the products belonging to the selected category
+  - [ ] add a "category" select that filters all the products belonging to the selected category: ??? this one should be already implemented
   - [ ] allows the creation inline of a new product belonging to the selected category
 - [ ] create a better style for the login page
 - [ ] create a better style for the beneficiary confirmation page
 - [ ] create a better style for the beneficiary's max shop count confirmation page
 - [ ] Avoid hardcoded routes in JS
+- [ ] bulk add in cart: handle properly errors

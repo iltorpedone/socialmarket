@@ -61,6 +61,24 @@ function setupCart() {
   const cart = new Cart({ container })
 }
 
+function setupCartToggle() {
+  const element = document.querySelector('[data-toggle]')
+  if (element === null || element === undefined) {
+    return
+  }
+  const target = document.querySelector(`[${element.dataset.target}]`)
+  if (target === null || target === undefined) {
+    console.warn('Can\'t find toggle target.')
+    return
+  }
+  element.addEventListener('click', (event) => {
+    event.preventDefault()
+    target.classList.toggle('dn')
+  })
+}
+
 updateCityOnProviderSelection()
 showBeneficiaryOnNewShopping()
 setupCart()
+
+setupCartToggle()

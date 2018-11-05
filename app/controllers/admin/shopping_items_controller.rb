@@ -6,11 +6,13 @@ module Admin
     end
 
     def bulk_add
-      # TODO: implement me
+      form = CartForm.new(user: current_user, shopping_id: params[:shopping_id])
+      form.bulk_add(params[:items])
+      render json: { success: true } # TODO: return proper error result
     end
 
     def destroy
-      back_path = admin_shopping_path(requested_resource.shopping_id)
+      back_path = params[:back_path] || admin_shopping_path(requested_resource.shopping_id)
       if requested_resource.destroy
         flash[:notice] = translate_with_resource("destroy.success")
       else

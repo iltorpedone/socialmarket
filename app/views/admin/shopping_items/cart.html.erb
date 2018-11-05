@@ -1,15 +1,26 @@
-<section class="main-content__body" data-cart data-price="<%= @form.price %>" data-quantity="<%= @form.quantity %>" data-items-count="<%= @form.items_count %>">
-  <h2>Beneficiario</h2>
-  <%= render partial: 'admin/beneficiaries/info', locals: { object: @form.beneficiary } %>
+<section class="main-content__body" data-cart data-price="<%= @form.price %>" data-quantity="<%= @form.quantity %>" data-items-count="<%= @form.items_count %>" data-shopping-id="<%= @form.shopping.id %>">
+  <a data-toggle data-target="data-beneficiary-info" class="pointer">Informazioni beneficiario: <%= @form.shopping.beneficiary.full_name %></a>
+  <div class="dn" data-beneficiary-info>
+    <%= render partial: 'admin/beneficiaries/info', locals: { object: @form.beneficiary } %>
+  </div>
 
-  <dl>
-    <dt>Prodotti</dt>
-    <dd data-cart-items-count-view><%= @form.items_count %></dd>
-    <dt>Totale unità</dt>
-    <dd data-cart-quantity-view><%= @form.quantity %></dd>
-    <dt>Importo totale</dt>
-    <dd data-cart-price-view><%= @form.price %></dd>
-  </dl>
+  <h1>Spesa corrente</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Prodotti</th>
+        <th>Totale unità</th>
+        <th>Importo totale</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-cart-items-count-view><%= @form.items_count %></td>
+        <td data-cart-quantity-view><%= @form.quantity %></td>
+        <td data-cart-price-view><%= @form.price %></td>
+      </tr>
+    </tbody>
+  </table>
 
   <table>
     <thead>
@@ -61,4 +72,8 @@
 
   <div data-cart-items-container>
   </div>
+
+  <section class="form-fragment center w-50 tc">
+    <button data-cart-submit-input type="submit">Aggiungi</button>
+  </section>
 </section>

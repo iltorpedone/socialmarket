@@ -7,6 +7,10 @@ class ShoppingItem < ApplicationRecord
   end
 
   def category_name
-    warehouse_item.category.name
+    warehouse_item.item_category.name
+  end
+
+  def name
+    warehouse_item.name
   end
 end

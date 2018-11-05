@@ -1,4 +1,4 @@
-<%= link_to object.full_name, admin_beneficiary_path(object) %>
+<%= link_to "Scheda di #{object.full_name}", admin_beneficiary_path(object) %>
 
 <% registry_attributes = %w[address gender telephone family_size] %>
 <% shops_attributes = %w[max_shop_count current_shop_count] %>
