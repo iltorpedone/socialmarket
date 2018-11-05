@@ -98,7 +98,7 @@ User.create(
     ```
     - [x] add a category select that performs a json request
     - [x] json response: for each item render an input row
-    - [ ] input rows: when the amount changes, update the row total and the current shopping total
+    - [x] input rows: when the amount changes, update the row total and the current shopping total
     - [ ] add button perform a post request that persists the items with quantity > 0
     - [ ] the add action completes by reloading the page
     - [ ] for each item in the current shopping, show the code, quantity, total, category and a delete button

@@ -1,2 +1,9 @@
-<p class="shopping-total">Totale: <b><span class="value"><%= object.total ? object.total : '-' %></span></b></p>
-<p class="shopping-total">Oggetti: <span class="value"><%= object.items.count %></span></p>
+<p class="shopping-total">
+  Totale:
+  <span data-cart-price-view><%= object.price %></span>
+</p>
+
+<p class="shopping-total">
+  Oggetti:
+  <span data-cart-quantity-view><%= object.items.count %></span>
+</p>

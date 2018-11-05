@@ -12,10 +12,10 @@
     <% @list.each do |item| %>
       <tr>
         <td><%= item.name %></td>
-        <td><%= number_field_tag "item_#{item.id}", 0, in: (0..item.stock_count), data: { item_control: true } %></td>
+        <td><%= number_field_tag "item_#{item.id}", 0, in: (0..item.stock_count), data: { quantity_input: true, id: item.id, unitary_amount: item.unitary_amount } %></td>
         <td><%= item.stock_count %></td>
         <td><%= item.unitary_amount %></td>
-        <td><span data-total="true">0</span></td>
+        <td data-price-view>0</td>
       </tr>
     <% end %>
   </tbody>

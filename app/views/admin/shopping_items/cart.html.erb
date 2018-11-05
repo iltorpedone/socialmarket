@@ -1,15 +1,64 @@
-<section class="main-content__body">
-  <h1>Spesa corrente</h1>
-  <%= render partial: 'admin/shoppings/stats', locals: { object: @form.shopping } %>
-
+<section class="main-content__body" data-cart data-price="<%= @form.price %>" data-quantity="<%= @form.quantity %>" data-items-count="<%= @form.items_count %>">
   <h2>Beneficiario</h2>
   <%= render partial: 'admin/beneficiaries/info', locals: { object: @form.beneficiary } %>
-</section>
 
-<section class="form-fragment center w-50 tc">
-  <%= label_tag :category, 'Categoria' %>
-  <%= select_tag(:category, options_from_collection_for_select(ItemCategory.ordered, 'id', 'name'), class: '', data: { shopping_category: true }, include_blank: true) %>
-</section>
+  <dl>
+    <dt>Prodotti</dt>
+    <dd data-cart-items-count-view><%= @form.items_count %></dd>
+    <dt>Totale unità</dt>
+    <dd data-cart-quantity-view><%= @form.quantity %></dd>
+    <dt>Importo totale</dt>
+    <dd data-cart-price-view><%= @form.price %></dd>
+  </dl>
 
-<div data-items-container>
-</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Categoria</th>
+        <th>Nome</th>
+        <th>Quantità</th>
+        <th>Totale</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @form.shopping.items.each do |item| %>
+        <tr>
+          <td><%= item.category_name %></td>
+          <td><%= item.name %></td>
+          <td><%= item.quantity %></td>
+          <td><%= item.price %></td>
+          <td>
+            <%= link_to(
+              'Rimuovi',
+              admin_shopping_item_path(
+                item.id,
+                back_path: cart_admin_shopping_shopping_items_path(@form.shopping.id)
+              ),
+              method: :delete,
+              data: {
+                confirm: 'Sei sicuro?',
+                disable_with: 'In rimozione..',
+            }) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <section class="form-fragment center w-50 tc">
+    <%= label_tag :category, 'Categoria' %>
+    <%= select_tag(
+      :category,
+      options_from_collection_for_select(ItemCategory.ordered, 'id', 'name'),
+      class: '',
+      data: {
+        cart_category_input: true
+      },
+      include_blank: true
+    ) %>
+  </section>
+
+  <div data-cart-items-container>
+  </div>
+</section>
