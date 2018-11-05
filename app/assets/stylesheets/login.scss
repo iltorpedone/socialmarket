@@ -1,4 +1,14 @@
 $bg-color: #ffe007;
+$secondary-color: #dccb3a;
+
+.link {
+  color: black;
+  text-decoration: none;
+  border-bottom: 1px solid $secondary-color;
+  &:hover {
+    color: #a09123;
+  }
+}
 
 .sign-in {
   display: flex;
@@ -8,10 +18,12 @@ $bg-color: #ffe007;
 
   h2 {
     padding: 1rem 2rem;
-    border: 1px solid #ffd45a;
+    text-transform: uppercase;
+    border: 1px solid $secondary-color;
     color: white;
     background: $bg-color;
     font-family: sans-serif;
+    text-shadow: 1px 1px 0px #dccb3a;
   }
 
   form {
@@ -51,12 +63,18 @@ $bg-color: #ffe007;
     input {
       width: 100%;
       font-size: 16px;
+      border-color: $secondary-color;
+      text-shadow: 1px 1px 0px #dccb3a;
       background: $bg-color;
       color: white;
       text-transform: uppercase;
       font-weight: bold;
       &:hover {
         cursor: pointer;
+        border-color: $secondary-color;
+        text-shadow: 1px 1px 0px $secondary-color;
+        background: white;
+        color: $bg-color;
       }
     }
   }

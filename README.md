@@ -104,7 +104,7 @@ User.create(
     - [x] for each item in the current shopping, show the name, quantity, total, category and a delete button
     - [x] the delete action reloads the page
 - [ ] Close shopping:
-  - [ ] in new shopping items, add a "soft close" button that once clicked, just sets a `soft_closed` field
+  - [ ] in cart, add a "soft close" button that once clicked, just sets a `soft_closed` field
   - [ ] in the shopping index and show pages:
     - [ ] show a "hard close" button that, once clicked, makes it impossible to reopen the shopping list
     - [ ] is the shopping is “soft closed“ then show a "re-open" button that once clicked allows the edit of the shopping items
@@ -118,3 +118,4 @@ User.create(
 - [ ] bulk add in cart: handle properly errors
 - [ ] shopping#index: apply an ordering
 - [ ] cart: when adding an item that's already present in the cart, merge it upon save instead of adding the duplicate
+- [ ] better password reset style

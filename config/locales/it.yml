@@ -59,6 +59,7 @@ it:
         updated_at: Aggiornato il
 
   resources:
+    beneficiario: Beneficiario
     beneficiary: Beneficiario
     beneficiaries: Beneficiari
     provider: Ente inviante
