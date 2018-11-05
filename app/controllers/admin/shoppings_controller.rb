@@ -23,5 +23,11 @@ module Admin
         }
       end
     end
+
+    private
+
+    def scoped_resource
+      Shopping.for_user(current_user).ordered
+    end
   end
 end
