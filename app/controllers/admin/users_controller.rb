@@ -47,9 +47,6 @@ module Admin
     end
 
     def destroy
-      provider = if requested_resource.provider?
-        requested_resource.provider
-      end
       if requested_resource.soft_delete!
         flash[:notice] = translate_with_resource("destroy.success")
       else
