@@ -72,8 +72,17 @@ as well as a link to its edit page.
       ) %>
       </dt>
 
-      <dd class="attribute-data attribute-data--<%=attribute.html_class%>"
-          ><%= render_field attribute, page: page %></dd>
+      <dd class="attribute-data attribute-data--<%=attribute.html_class%>">
+        <% if attribute.attribute == :provider %>
+          <% if page.resource.provider.deleted? %>
+            <i><%= page.resource.provider.name %></i> 🚫 [Non attivo]
+          <% else %>
+            <%= render_field attribute, page: page %>
+          <% end %>
+        <% else %>
+          <%= render_field attribute, page: page %>
+        <% end %>
+      </dd>
     <% end %>
   </dl>
 </section>
