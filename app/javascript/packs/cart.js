@@ -6,6 +6,11 @@ class Cart {
   constructor({ container }) {
     this.container = container
     this.setDefaults()
+    this.init = {
+      price: this.price,
+      quantity: this.quantity,
+      itemsCount: this.itemsCount,
+    }
     this.shoppingId = container.dataset.shoppingId
     this.domElements = {
       categoryInput: this.container.querySelector('[data-cart-category-input]'),
@@ -57,8 +62,7 @@ class Cart {
     const { price, quantity, itemsCount } = this.container.dataset
     this.price = this.toPrice(price)
     this.quantity = this.toQuantity(quantity)
-    this.baseItemsCount = this.toQuantity(itemsCount)
-    this.itemsCount = 0
+    this.itemsCount = this.toQuantity(itemsCount)
     this.items = {}
   }
 
@@ -128,13 +132,13 @@ class Cart {
 
   updateTotals() {
     const values = Object.values(this.items)
-    this.quantity = values.
+    this.quantity = this.init.quantity + values.
       map((item) => item.quantity).
       reduce((memo, current) => memo + current, 0)
-    this.price = values.
+    this.price = this.init.price + values.
       map((item) => item.price).
       reduce((memo, current) => memo + current, 0)
-    this.itemsCount = this.baseItemsCount + values.length
+    this.itemsCount = this.init.itemsCount + values.length
   }
 
   updateViews() {
