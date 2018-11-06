@@ -61,10 +61,10 @@
     </thead>
     <tbody>
       <% object.shoppings.each do |shopping| %>
-        <% presenter = ShoppingPresenter.new(shopping) %>
+        <% cart = CartForm.new(shopping_id: shopping.id) %>
         <tr>
-          <td><%= presenter.items_count %></td>
-          <td><%= presenter.price %></td>
+          <td><%= cart.items_count %></td>
+          <td><%= cart.price %></td>
           <td><%= shopping.created_at %></td>
         </tr>
       <% end %>
