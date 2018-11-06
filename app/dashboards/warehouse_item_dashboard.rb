@@ -26,6 +26,7 @@ class WarehouseItemDashboard < Administrate::BaseDashboard
     :item_category,
     :id,
     :name,
+    :stock_count,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
