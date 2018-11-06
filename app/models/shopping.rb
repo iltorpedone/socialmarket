@@ -1,7 +1,7 @@
 class Shopping < ApplicationRecord
   belongs_to :beneficiary
   belongs_to :provider
-  has_many :items, class_name: :ShoppingItem
+  has_many :items, class_name: :ShoppingItem, dependent: :destroy
   enum status: [ :opened, :soft_closed, :hard_closed ]
 
   accepts_nested_attributes_for :items

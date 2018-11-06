@@ -61,9 +61,10 @@
     </thead>
     <tbody>
       <% object.shoppings.each do |shopping| %>
+        <% presenter = ShoppingPresenter.new(shopping) %>
         <tr>
-          <td><%= shopping.items.count %></td>
-          <td><%= shopping.total %></td>
+          <td><%= presenter.items_count %></td>
+          <td><%= presenter.price %></td>
           <td><%= shopping.created_at %></td>
         </tr>
       <% end %>

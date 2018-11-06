@@ -108,6 +108,7 @@ User.create(
   - [ ] in the shopping index and show pages:
     - [x] show a "hard close" button that, once clicked, makes it impossible to reopen the shopping list
     - [x] if the shopping is “soft closed“ then show a "re-open" button that once clicked allows the edit of the shopping items
+    - [x] when closing a shopping, serialize its shopping items and then delete the records.
 - [ ] in new shopping items
   - [ ] add a "category" select that filters all the products belonging to the selected category: ??? this one should be already implemented
   - [ ] allows the creation inline of a new product belonging to the selected category

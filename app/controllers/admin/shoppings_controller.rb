@@ -24,6 +24,22 @@ module Admin
       end
     end
 
+    def update
+      if requested_resource.update(resource_params)
+        if resource_params[:status] == 'hard_closed'
+          CloseShopping.(requested_resource.id)
+        end
+        redirect_to(
+          [namespace, requested_resource],
+          notice: translate_with_resource("update.success"),
+        )
+      else
+        render :edit, locals: {
+          page: Administrate::Page::Form.new(dashboard, requested_resource),
+        }
+      end
+    end
+
     private
 
     def scoped_resource

@@ -25,18 +25,54 @@ class CartForm
   end
 
   def price
-    shopping.items.map(&:price).sum
+    if shopping.hard_closed?
+      deserialized_data['price']
+    else
+      presenter.price
+    end
+  end
+
+  def shopping_items
+    if shopping.hard_closed?
+      deserialized_data['items'].map do |item|
+        SerializedShoppingItem.new(
+          item['category_name'],
+          item['name'],
+          item['quantity'],
+          item['price'],
+        )
+      end
+    else
+      presenter.items
+    end
   end
 
   def quantity
-    shopping.items.pluck(:quantity).sum
+    if shopping.hard_closed?
+      deserialized_data['quantity']
+    else
+      presenter.quantity
+    end
   end
 
   def items_count
-    shopping.items.count
+    if shopping.hard_closed?
+      deserialized_data['items_count']
+    else
+      presenter.items_count
+    end
   end
 
   def json_state
     JSON.generate({ quantity: quantity, price: price })
+  end
+
+  private
+  def deserialized_data
+    @deserialized_data ||= JSON.parse(shopping.serialized_data)
+  end
+
+  def presenter
+    @presenter ||= ShoppingPresenter.new(shopping)
   end
 end
