@@ -9,5 +9,6 @@ class Provider < ApplicationRecord
 
   def soft_delete!
     update(deleted: true)
+    user.soft_delete! unless user.deleted?
   end
 end

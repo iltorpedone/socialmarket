@@ -119,3 +119,4 @@ User.create(
 - [x] shopping#index: apply an ordering
 - [ ] cart: when adding an item that's already present in the cart, merge it upon save instead of adding the duplicate
 - [ ] better password reset style
+- [x] provider/user deletion: make one's deletion dependent on the other's
