@@ -1,6 +1,6 @@
 # Social Market
 
-https://www.socialmarketnordmi.org
+- https://www.socialmarketnordmi.org
 
 ## Seed administrators
 
