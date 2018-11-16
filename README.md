@@ -1,6 +1,6 @@
 # Social Market
 
-https://socialmarket-it.herokuapp.com
+- https://www.socialmarketnordmi.org
 
 ## Seed administrators
 
