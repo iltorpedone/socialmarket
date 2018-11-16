@@ -118,6 +118,47 @@ User.create(
 - [ ] bulk add in cart: handle properly errors
 - [x] shopping#index: apply an ordering
 - [ ] cart: when adding an item that's already present in the cart, merge it upon save instead of adding the duplicate
-- [ ] better password reset style
 - [x] provider/user deletion: make one's deletion dependent on the other's
 - [ ] check user/provider active/deleted status across users/providers/shoppings index/show/edit pages
+- [ ] cart -> item selected: sort warehouse items by name
+- [ ] shoppings index:
+  - [ ] show the total
+  - [ ] show the total of unique beneficiaries
+  - [ ] implement filters, they behave as AND when present and ANY when absent:
+    - [ ] start date, end date
+    - [ ] beneficiary
+    - [ ] provider
+    - [ ] city
+- [ ] A provider should only see the menu items Beneficiaries and Providers
+- [ ] In the beneficiaries index
+  - [ ] show additional columns:
+    - [ ] max shoppings count
+    - [ ] shoppings count
+    - [ ] frequency
+  - [ ] remove the columns: address, telephone and gender
+- [ ] beneficiary page:
+  - [ ] remove shoppings list
+- [ ] if the user is a provider:
+  - [ ] remove the "new shopping" button from the beneficiary page
+  - [ ] remove the link "delete shopping" and "modify shopping" everywhere
+- [ ] provider page:
+  - [ ] remove the shoppings list
+  - [ ] remove the beneficiaries list
+  - [ ] show the number of beneficiaries associated
+- [ ] beneficiaries index:
+  - [ ] shows the total records
+- [ ] cities page:
+  - [ ] show the total beneficiaries count per city
+  - [ ] show the total shoppings count per city
+- [ ] #bugfix when a cart updates, update the warehouse stocks accordingly
+- [ ] when soft deleting a user, update their e-mail inserting a prefix so that the e-mail can be later used
+- [ ] user page: when it has to be activated by the admin, don't show the "edit" button
+- [ ] better password reset style
+- [ ] data exports:
+  - [ ] beneficiaries CSV
+  - [ ] cities CSV
+  - [ ] categories CSV
+  - [ ] providers CSV
+  - [ ] users CSV
+  - [ ] warehouse CSV
+  - [ ] shoppings JSON
