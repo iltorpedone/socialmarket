@@ -3,6 +3,7 @@ class WarehouseItem < ApplicationRecord
   has_many :shopping_items
 
   def self.ordered
-    includes(:item_category).order('item_categories.name ASC')
+    includes(:item_category).
+      order('item_categories.name ASC, warehouse_items.name ASC')
   end
 end

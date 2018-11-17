@@ -120,7 +120,7 @@ User.create(
 - [ ] cart: when adding an item that's already present in the cart, merge it upon save instead of adding the duplicate
 - [x] provider/user deletion: make one's deletion dependent on the other's
 - [ ] check user/provider active/deleted status across users/providers/shoppings index/show/edit pages
-- [ ] cart -> item selected: sort warehouse items by name
+- [x] cart -> item selected: sort warehouse items by name
 - [ ] shoppings index:
   - [ ] show the total
   - [ ] show the total of unique beneficiaries
