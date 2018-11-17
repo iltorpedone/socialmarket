@@ -122,7 +122,7 @@ User.create(
 - [ ] check user/provider active/deleted status across users/providers/shoppings index/show/edit pages
 - [x] cart -> item selected: sort warehouse items by name
 - [ ] shoppings index:
-  - [ ] show the total
+  - [x] show the total
   - [ ] show the total of unique beneficiaries
   - [ ] implement filters, they behave as AND when present and ANY when absent:
     - [ ] start date, end date
