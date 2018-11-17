@@ -129,7 +129,7 @@ User.create(
     - [ ] beneficiary
     - [ ] provider
     - [ ] city
-- [ ] A provider should only see the menu items Beneficiaries and Providers
+- [x] A provider should only see the menu items Beneficiaries and Providers
 - [ ] In the beneficiaries index
   - [ ] show additional columns:
     - [ ] max shoppings count
