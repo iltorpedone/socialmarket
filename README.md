@@ -123,7 +123,7 @@ User.create(
 - [x] cart -> item selected: sort warehouse items by name
 - [ ] shoppings index:
   - [x] show the total
-  - [ ] show the total of unique beneficiaries
+  - [x] show the total of unique beneficiaries
   - [ ] implement filters, they behave as AND when present and ANY when absent:
     - [ ] start date, end date
     - [ ] beneficiary

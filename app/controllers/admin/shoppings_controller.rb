@@ -45,5 +45,6 @@ module Admin
     def scoped_resource
       Shopping.for_user(current_user).ordered
     end
+    helper_method :scoped_resource
   end
 end
