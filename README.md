@@ -136,8 +136,8 @@ User.create(
     - [x] shoppings count
     - [x] frequency
   - [x] remove the columns: address, telephone and gender
-- [ ] beneficiary page:
-  - [ ] remove shoppings list
+- [x] beneficiary page:
+  - [x] remove shoppings list
 - [ ] if the user is a provider:
   - [ ] remove the "new shopping" button from the beneficiary page
   - [ ] remove the link "delete shopping" and "modify shopping" everywhere

@@ -58,7 +58,6 @@ class BeneficiaryDashboard < Administrate::BaseDashboard
     :provider,
     :city,
     :is_active,
-    :shoppings,
     :id,
     :first_name,
     :last_name,
