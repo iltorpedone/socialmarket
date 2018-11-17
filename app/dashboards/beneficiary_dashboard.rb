@@ -45,10 +45,10 @@ class BeneficiaryDashboard < Administrate::BaseDashboard
     :city,
     :first_name,
     :last_name,
-    :gender,
+    :max_shop_count,
+    :current_shop_count,
+    :frequency,
     :is_active,
-    :address,
-    :telephone,
     :id,
   ].freeze
 

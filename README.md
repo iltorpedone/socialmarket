@@ -130,12 +130,12 @@ User.create(
     - [ ] provider
     - [ ] city
 - [x] A provider should only see the menu items Beneficiaries and Providers
-- [ ] In the beneficiaries index
-  - [ ] show additional columns:
-    - [ ] max shoppings count
-    - [ ] shoppings count
-    - [ ] frequency
-  - [ ] remove the columns: address, telephone and gender
+- [x] In the beneficiaries index
+  - [x] show additional columns:
+    - [x] max shoppings count
+    - [x] shoppings count
+    - [x] frequency
+  - [x] remove the columns: address, telephone and gender
 - [ ] beneficiary page:
   - [ ] remove shoppings list
 - [ ] if the user is a provider:
