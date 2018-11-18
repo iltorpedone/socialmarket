@@ -102,6 +102,8 @@ it:
     provider: Ente inviante
     beneficiary: Beneficiario
     beneficiary_id: Beneficiario
+    beneficiaries_count: N.° beneficiari
+    shoppings_count: Tot. spese
     city: Città
     full_name: Nome completo
     first_name: Nome

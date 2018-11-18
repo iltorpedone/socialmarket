@@ -11,4 +11,12 @@ class Provider < ApplicationRecord
     update(deleted: true)
     user.soft_delete! unless user.deleted?
   end
+
+  def beneficiaries_count
+    beneficiaries.count
+  end
+
+  def shoppings_count
+    beneficiaries.joins(:shoppings).count
+  end
 end

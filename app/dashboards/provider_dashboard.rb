@@ -17,6 +17,8 @@ class ProviderDashboard < Administrate::BaseDashboard
     name: Field::String,
     referent: Field::String,
     shoppings: Field::HasMany,
+    beneficiaries_count: Field::Number,
+    shoppings_count: Field::Number,
     telephone: Field::String,
     updated_at: Field::DateTime,
   }.freeze
@@ -45,9 +47,9 @@ class ProviderDashboard < Administrate::BaseDashboard
     :email,
     :telephone,
     :address,
+    :beneficiaries_count,
+    :shoppings_count,
     :referent,
-    :beneficiaries,
-    :shoppings,
     :created_at,
     :updated_at,
   ].freeze

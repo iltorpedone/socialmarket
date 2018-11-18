@@ -24,11 +24,13 @@ as well as a link to its edit page.
   </h1>
 
   <div>
-    <%= link_to(
-      t("administrate.actions.edit_resource", name: page.page_title),
-      [:edit, namespace, page.resource],
-      class: "button",
-    ) if valid_action?(:edit) && show_action?(:edit, page.resource) %>
+    <% if page.resource.is_active? %>
+      <%= link_to(
+        t("administrate.actions.edit_resource", name: page.page_title),
+        [:edit, namespace, page.resource],
+        class: "button",
+      ) if valid_action?(:edit) && show_action?(:edit, page.resource) %>
+    <% end %>
   </div>
 </header>
 

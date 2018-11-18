@@ -13,6 +13,8 @@ class CityDashboard < Administrate::BaseDashboard
     name: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    beneficiaries_count: Field::Number,
+    shoppings_count: Field::Number,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -23,6 +25,8 @@ class CityDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :name,
+    :beneficiaries_count,
+    :shoppings_count,
     :created_at,
   ].freeze
 

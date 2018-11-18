@@ -12,6 +12,8 @@ class CartForm
         warehouse_item_id: warehouse_item_id,
         quantity: item['quantity'],
       )
+      wi = WarehouseItem.find(warehouse_item_id)
+      wi.update(stock_count: wi.stock_count - quantity)
     end
     shopping.update_total!
   end

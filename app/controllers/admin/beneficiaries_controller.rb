@@ -123,8 +123,6 @@ module Admin
       redirect_to admin_beneficiary_path(beneficiary), notice: 'Soglia negata.'
     end
 
-    private
-
     def scoped_resource
       scope = if current_user.provider?
         current_user.provider.beneficiaries
@@ -133,6 +131,7 @@ module Admin
       end
       scope.ordered
     end
+    helper_method :scoped_resource
 
   end
 end

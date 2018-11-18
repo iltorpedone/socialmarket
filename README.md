@@ -138,22 +138,22 @@ User.create(
   - [x] remove the columns: address, telephone and gender
 - [x] beneficiary page:
   - [x] remove shoppings list
-- [ ] if the user is a provider:
-  - [ ] remove the "new shopping" button from the beneficiary page
-  - [ ] remove the link "delete shopping" and "modify shopping" everywhere
-- [ ] provider page:
-  - [ ] remove the shoppings list
-  - [ ] remove the beneficiaries list
-  - [ ] show the number of beneficiaries associated
-- [ ] beneficiaries index:
-  - [ ] shows the total records
-- [ ] cities page:
-  - [ ] show the total beneficiaries count per city
-  - [ ] show the total shoppings count per city
-- [ ] #bugfix when a cart updates, update the warehouse stocks accordingly
-- [ ] when soft deleting a user, update their e-mail inserting a prefix so that the e-mail can be later used
-- [ ] user page: when it has to be activated by the admin, don't show the "edit" button
-- [ ] better password reset style
+- [x] if the user is a provider:
+  - [x] remove the "new shopping" button from the beneficiary page
+  - [x] remove the link "delete shopping" and "modify shopping" everywhere
+- [x] provider page:
+  - [x] remove the shoppings list
+  - [x] remove the beneficiaries list
+  - [x] show the number of beneficiaries associated
+- [x] beneficiaries index:
+  - [x] shows the total records
+- [x] cities page:
+  - [x] show the total beneficiaries count per city
+  - [x] show the total shoppings count per city
+- [x] #bugfix when a cart updates, update the warehouse stocks accordingly
+- [x] when soft deleting a user, update their e-mail inserting a prefix so that the e-mail can be later used
+- [x] user page: when it has to be activated by the admin, don't show the "edit" button
+- [x] better password reset style
 - [ ] data exports:
   - [ ] beneficiaries CSV
   - [ ] cities CSV
