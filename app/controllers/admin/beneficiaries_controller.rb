@@ -77,7 +77,7 @@ module Admin
       # Check the definition of `AuthorizeRole`.
       @beneficiary = Beneficiary.find(params[:id])
       @beneficiary.make_active!
-      redirect_to admin_beneficiary_path(@beneficiary), notice: 'Activated!'
+      redirect_to admin_beneficiary_path(@beneficiary), notice: 'Attivato!'
     end
 
     def deny_confirmation
@@ -86,7 +86,7 @@ module Admin
       # Check the definition of `AuthorizeRole`.
       beneficiary = Beneficiary.find(params[:id])
       beneficiary.delete
-      redirect_to admin_root_path, notice: 'Beneficiary deleted'
+      redirect_to admin_root_path, notice: 'Beneficiario cancellato.'
     end
 
     def confirmation_max_shop_count
