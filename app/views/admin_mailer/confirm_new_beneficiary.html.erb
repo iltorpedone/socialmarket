@@ -1,3 +1,6 @@
-The provider <%= @beneficiary.provider.name %> just created the beneficiary:
-<pre><%= @beneficiary.inspect %></pre>
-<%= confirmation_admin_beneficiary_url(@beneficiary.id) %>
+<p>
+  L'ente inviante <strong><%= @beneficiary.provider.name %></strong> ha appena creato il beneficiario: <strong><%= @beneficiary.full_name %></strong>
+</p>
+<p>
+  <%= link_to 'Conferma/Rifiuta', confirmation_admin_beneficiary_url(@beneficiary.id) %>
+</p>
