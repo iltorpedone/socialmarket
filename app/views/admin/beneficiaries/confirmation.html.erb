@@ -1,3 +1,3 @@
-<%= link_to 'confirm', confirm_max_shop_count_admin_beneficiary_path(@beneficiary), method: :put %>
+<%= link_to 'Conferma e attiva', confirm_admin_beneficiary_path(@beneficiary), method: :put %>
 <br />
-<%= link_to 'deny', deny_confirmation_max_shop_count_admin_beneficiary_path(@beneficiary), method: :post, confirm: 'Are you sure? The beneficiary will be permanently deleted.' %>
+<%= link_to 'Rifiuta e cancella', deny_confirmation_admin_beneficiary_path(@beneficiary), method: :post, confirm: 'Sei sicuro? Il beneficiario verrà cancellato permanentemente.' %>
