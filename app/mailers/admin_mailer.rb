@@ -7,6 +7,12 @@ class AdminMailer < ApplicationMailer
     mail(to: to, subject: 'Conferma nuovo beneficiario')
   end
 
+  def notify_beneficiary_confirmation
+    @beneficiary = params[:beneficiary]
+    @provider = @beneficiary.provider
+    mail(to: @provider.email, subject: 'Nuovo beneficiario confermato')
+  end
+
   def confirm_beneficiary_proposed_max_shop_count
     @beneficiary = params[:beneficiary]
     to = User.admin.map do |user|

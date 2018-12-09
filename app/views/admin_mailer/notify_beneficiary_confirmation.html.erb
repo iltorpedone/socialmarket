@@ -1,0 +1,7 @@
+<p>
+  Il beneficiario <%= link_to @beneficiary.full_name, admin_beneficiary_url(@beneficiary) %> è stato confermato ed è quindi attivo nella piattaforma <strong>Social Market</strong>.
+</p>
+
+<p>
+  Questa e-mail è stata inviata in quanto il beneficiario è legato all'ente inviante <%= link_to @provider.name, admin_provider_url(@provider) %>.
+</p>

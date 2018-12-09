@@ -77,6 +77,7 @@ module Admin
       # Check the definition of `AuthorizeRole`.
       @beneficiary = Beneficiary.find(params[:id])
       @beneficiary.make_active!
+      AdminMailer.with(beneficiary: beneficiary).notify_beneficiary_confirmation.deliver_now
       redirect_to admin_beneficiary_path(@beneficiary), notice: 'Attivato!'
     end
 
