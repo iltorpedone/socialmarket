@@ -1,11 +1,2 @@
-<!DOCTYPE html>
-<html lang="it" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Completa il profilo</title>
-  </head>
-  <body>
-    Clicca sul seguente link per completare il tuo profilo:
-    <%= new_signup_completion_url(token: @user.signup_token) %>
-  </body>
-</html>
+Clicca sul seguente link per completare il tuo profilo:
+<%= new_signup_completion_url(token: @user.signup_token) %>

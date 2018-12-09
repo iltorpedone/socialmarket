@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="it" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Confirm new beneficiary</title>
-  </head>
-  <body>
-    The provider <%= @beneficiary.provider.name %> just created the beneficiary:
-    <pre><%= @beneficiary.inspect %></pre>
-    <%= confirmation_admin_beneficiary_url(@beneficiary.id) %>
-  </body>
-</html>
+The provider <%= @beneficiary.provider.name %> just created the beneficiary:
+<pre><%= @beneficiary.inspect %></pre>
+<%= confirmation_admin_beneficiary_url(@beneficiary.id) %>
