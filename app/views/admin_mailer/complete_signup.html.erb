@@ -1,2 +1,16 @@
-Clicca sul seguente link per completare il tuo profilo:
-<%= new_signup_completion_url(token: @user.signup_token) %>
+<p>
+  Verrà richiesto di inserire la password con cui accedere in seguito alla piattaforma <%= link_to 'Social Market', root_url %>.
+</p>
+<p>
+  Per entrare in seguito nella piattaforma sarà necessario inserire l'e-mail <strong><%= @user.email %></strong> e la password immessa.
+</p>
+<p>
+  È raccomandabile usare una password unica e non riutilizzare password usate per altri servizi (come Facebook, Google, ecc.).
+</p>
+<p>
+  Clicca sul seguente link per completare il tuo profilo:<br />
+  <%= link_to 'Completa il profilo', new_signup_completion_url(token: @user.signup_token) %>
+</p>
+<p>
+  Questa e-mail è inviata da parte degli amministratori della piattaforma.
+</p>
