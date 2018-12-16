@@ -17,7 +17,10 @@ module Admin
     def destroy
       back_path = params[:back_path] || admin_shopping_path(requested_resource.shopping_id)
       shopping = Shopping.find_by(id: requested_resource.shopping_id)
+      warehouse_item = requested_resource.warehouse_item
+      restored_total = warehouse_item.stock_count + requested_resource.quantity
       if requested_resource.destroy
+        warehouse_item.update(stock_count: restored_total)
         if shopping
           shopping.update_total!
         end
