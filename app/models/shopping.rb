@@ -11,7 +11,7 @@ class Shopping < ApplicationRecord
   end
 
   def self.for_user(user)
-    return all if user.administrator?
+    return all if user.administrator? || user.shop?
     if user.provider?
       return where(provider_id: user.provider.id)
     end
