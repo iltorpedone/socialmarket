@@ -4,8 +4,12 @@ it:
   helpers:
     submit:
       sessions:
-        create: Create
-        update: Update
+        create: Crea
+        update: Aggiorna
+  max_shops_alert: Il beneficiario ha già effettuato il numero massimo di spese a lui consentite.
+  form:
+    buttons:
+      create: Crea
   sessions:
     form:
       forgot_password: Recupera password

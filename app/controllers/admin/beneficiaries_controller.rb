@@ -2,7 +2,8 @@ module Admin
   class BeneficiariesController < Admin::ApplicationController
     def show
       respond_to do |format|
-        format.json { render json: requested_resource }
+        object = requested_resource.as_json(methods: :current_shop_count)
+        format.json { render json: object }
         format.html do
           page = Administrate::Page::Show.new(
             dashboard,

@@ -23,6 +23,10 @@ class Beneficiary < ApplicationRecord
     shoppings.count
   end
 
+  def can_shop?
+    max_shop_count > current_shop_count
+  end
+
   def family_size
     family_components_count_0_1 + family_components_count_2_5 + family_components_count_6_12 + family_components_count_13_18 + family_components_count_19_30 + family_components_count_30_65 + family_components_count_over_65
   end

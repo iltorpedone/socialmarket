@@ -13,6 +13,10 @@ module Admin
 
     def create
       resource = resource_class.new(resource_params)
+      unless resource.beneficiary.can_shop?
+        redirect_to new_admin_shopping_path, notice: t('max_shops_alert')
+        return
+      end
       authorize_resource(resource)
 
       if resource.save

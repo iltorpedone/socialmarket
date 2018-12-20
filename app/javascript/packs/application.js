@@ -49,7 +49,18 @@ function showBeneficiaryOnNewShopping() {
     const targetProviderElement = document.querySelector('#new_shopping #shopping_provider_id')
     fetch(`/admin/beneficiaries/${beneficiaryId}.json`).
       then((data) => data.json()).
-      then((json) => targetProviderElement.value = json.provider_id)
+      then((json) => {
+        targetProviderElement.value = json.provider_id
+        return json
+      }).
+      then((json) => {
+        if (json.current_shop_count >= json.max_shop_count) {
+          document.querySelector('#create-shopping').parentElement.classList.add('dn')
+          const alert = document.querySelector('#maxShopsAlert')
+          alert.classList.add('dib')
+          alert.classList.remove('dn')
+        }
+      })
   })
 }
 
