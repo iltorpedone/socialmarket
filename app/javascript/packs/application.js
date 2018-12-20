@@ -54,11 +54,14 @@ function showBeneficiaryOnNewShopping() {
         return json
       }).
       then((json) => {
+        const submitButton = document.querySelector('#create-shopping')
         if (json.current_shop_count >= json.max_shop_count) {
-          document.querySelector('#create-shopping').parentElement.classList.add('dn')
+          submitButton.parentElement.classList.add('dn')
           const alert = document.querySelector('#maxShopsAlert')
           alert.classList.add('dib')
           alert.classList.remove('dn')
+        } else {
+          submitButton.disabled = false
         }
       })
   })
