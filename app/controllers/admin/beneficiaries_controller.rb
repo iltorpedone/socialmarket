@@ -135,5 +135,12 @@ module Admin
     end
     helper_method :scoped_resource
 
+    def valid_action?(name, resource = resource_class)
+      if name == :destroy
+        current_user.administrator? && super
+      else
+        super
+      end
+    end
   end
 end
