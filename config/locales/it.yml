@@ -10,6 +10,7 @@ it:
   form:
     buttons:
       create: Crea
+      save: Salva modifiche
   sessions:
     form:
       forgot_password: Recupera password

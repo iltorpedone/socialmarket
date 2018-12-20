@@ -69,6 +69,6 @@ end
   <% end -%>
 
   <div class="form-actions">
-    <%= f.submit 'Crea' %>
+    <%= f.submit page.resource.persisted? ? t('form.buttons.save') : t('form.buttons.create') %>
   </div>
 <% end %>
