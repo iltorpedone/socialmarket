@@ -11,6 +11,7 @@ it:
     buttons:
       create: Crea
       save: Salva modifiche
+      shopping_create: Inizia spesa
   sessions:
     form:
       forgot_password: Recupera password
