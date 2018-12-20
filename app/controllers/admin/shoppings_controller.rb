@@ -44,6 +44,13 @@ module Admin
       end
     end
 
+    def valid_action?(name, resource = resource_class)
+      if current_user.shop?
+        return false if %i[edit create update destroy].include?(name)
+      end
+      super
+    end
+
     private
 
     def scoped_resource

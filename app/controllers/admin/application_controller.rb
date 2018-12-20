@@ -20,6 +20,8 @@ module Admin
       ).can?
         redirect_to root_path
       end
+    rescue ActiveRecord::RecordNotFound
+      redirect_to root_path
     end
 
     helper_method :logged_in?

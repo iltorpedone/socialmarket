@@ -3,6 +3,15 @@ class AuthorizeRole
   include ActiveModel::Model
 
   def can?
+    if user.shop?
+      unless %w[
+        admin/beneficiaries
+        admin/providers
+        admin/shoppings
+      ].include?(controller)
+      return false
+      end
+    end
     if !user.administrator?
       found = [
         -> {

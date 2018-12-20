@@ -47,6 +47,10 @@ end
   <% end %>
 
   <% page.attributes.each do |attribute| -%>
+    <% if current_user.shop? %>
+      <% next unless %i[gender telephone address].include?(attribute.attribute) %>
+    <% end %>
+    <% next if !current_user.shop? && !current_user.administrator? %>
     <% if current_user.provider? %>
       <% next if [:provider, :is_active].include?(attribute.attribute) %>
       <% if attribute.attribute == :max_shop_count %>

@@ -11,10 +11,12 @@ class Shopping < ApplicationRecord
   end
 
   def self.for_user(user)
-    return all if user.administrator? || user.shop?
-    if user.provider?
-      return where(provider_id: user.provider.id)
-    end
+    return all if user.administrator?
+
+    return hard_closed if user.shop?
+
+    return where(provider_id: user.provider.id) if user.provider?
+
     none
   end
 

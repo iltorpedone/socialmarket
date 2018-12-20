@@ -20,11 +20,18 @@ module Admin
       redirect_to action: :index
     end
 
+    def valid_action?(name, resource = resource_class)
+      if current_user.shop? && %i[edit create update destroy].include?(name)
+        return false
+      end
+      super
+    end
+
     private
 
     def scoped_resource
       base_scope = Provider.alive
-      if current_user.administrator?
+      if current_user.administrator? || current_user.shop?
         return base_scope
       end
       if current_user.provider?
