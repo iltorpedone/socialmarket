@@ -4,16 +4,11 @@
 
 ## Seed administrators
 
+```bash
+$ heroku run rails db:seed
 ```
-heroku run rails console
-User.create(
-  full_name: 'Elliot Alderson',
-  email: 'elliot@fsociety.org',
-  password: 'Mr.Robot',
-  app_role: :administrator,
-  is_active: true,
-)
-```
+
+**And remember to update the password for each user mentioned in `db/seeds.rb`.**
 
 ## TODO
 
