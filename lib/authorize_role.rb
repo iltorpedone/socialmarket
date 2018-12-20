@@ -8,6 +8,8 @@ class AuthorizeRole
         admin/beneficiaries
         admin/providers
         admin/shoppings
+        admin/shopping_items
+        admin/warehouse_items
       ].include?(controller)
       return false
       end
