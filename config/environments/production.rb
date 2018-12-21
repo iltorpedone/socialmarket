@@ -83,7 +83,7 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = {
     protocol: 'https',
-    host: 'www.socialmarketnordmi.org',
+    host: 'socialmarket-it.herokuapp.com',
   }
 
   # config.action_mailer.perform_deliveries = true # => defaults to `true`
