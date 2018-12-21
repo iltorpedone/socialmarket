@@ -8,10 +8,15 @@ class CartForm
     items.select do |warehouse_item_id, item|
       item['quantity'] > 0
     end.each do |warehouse_item_id, item|
-      shopping.items.create!(
-        warehouse_item_id: warehouse_item_id,
-        quantity: item['quantity'],
-      )
+      same_item = shopping.items.find_by(warehouse_item_id: warehouse_item_id)
+      if same_item
+        same_item.update(quantity: same_item.quantity + item['quantity'])
+      else
+        shopping.items.create!(
+          warehouse_item_id: warehouse_item_id,
+          quantity: item['quantity'],
+        )
+      end
       wi = WarehouseItem.find(warehouse_item_id)
       wi.update(stock_count: wi.stock_count - item['quantity'])
     end
