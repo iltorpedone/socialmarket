@@ -137,7 +137,7 @@ module Admin
 
     def valid_action?(name, resource = resource_class)
       case name
-      when :new then current_user.administrator? && super
+      when :new then (current_user.administrator? || current_user.provider?) && super
       when :destroy then current_user.administrator? && super
       else
         super
