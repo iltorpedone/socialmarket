@@ -1,6 +1,8 @@
 it:
   flashes:
     failure_after_create: Errore nel caricamento.
+    failure_when_not_signed_in: Devi essere autenticato.
+
   helpers:
     submit:
       sessions:
