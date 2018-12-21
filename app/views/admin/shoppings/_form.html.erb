@@ -35,6 +35,10 @@ and renders all form fields for a resource's editable attributes.
 
   <% page.attributes.each do |attribute| -%>
     <% next if attribute.attribute == :status %>
+    <% if attribute.attribute == :provider %>
+      <%= f.hidden_field :provider_id  %>
+      <% next %>
+    <% end %>
     <div class="field-unit field-unit--<%= attribute.html_class %>">
       <%= render_field attribute, f: f %>
     </div>
@@ -49,6 +53,15 @@ and renders all form fields for a resource's editable attributes.
       </div>
     <% end %>
   <% end -%>
+
+  <div id="provider-info" class="field-unit dn">
+    <div class="field-unit__label">
+      <%= t('enums.provider') %>
+    </div>
+    <div class="field-unit__field">
+      <strong></strong>
+    </div>
+  </div>
 
   <div class="form-actions">
     <%= f.submit t('form.buttons.shopping_create'), id: 'create-shopping', disabled: 'disabled' %>

@@ -2,7 +2,7 @@ module Admin
   class BeneficiariesController < Admin::ApplicationController
     def show
       respond_to do |format|
-        object = requested_resource.as_json(methods: :current_shop_count)
+        object = requested_resource.as_json(methods: :current_shop_count, include: :provider)
         format.json { render json: object }
         format.html do
           page = Administrate::Page::Show.new(

@@ -62,6 +62,9 @@ function showBeneficiaryOnNewShopping() {
           alert.classList.remove('dn')
         } else {
           submitButton.disabled = false
+          const providerInfo = document.querySelector('#provider-info')
+          providerInfo.classList.remove('dn')
+          providerInfo.querySelector('.field-unit__field').innerHTML = `<strong>${json.provider.name}</strong>`
         }
       })
   })
