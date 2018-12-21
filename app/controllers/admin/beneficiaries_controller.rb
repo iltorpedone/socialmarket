@@ -136,8 +136,9 @@ module Admin
     helper_method :scoped_resource
 
     def valid_action?(name, resource = resource_class)
-      if name == :destroy
-        current_user.administrator? && super
+      case name
+      when :new then current_user.administrator? && super
+      when :destroy then current_user.administrator? && super
       else
         super
       end
