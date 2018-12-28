@@ -21,6 +21,7 @@ gem 'rack', '~> 2.0.6'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'dotenv-rails', '~> 2.5'
 end
 
 group :development do
