@@ -8,8 +8,14 @@ class Provider < ApplicationRecord
   scope :deleted, -> { where(deleted: true) }
 
   def soft_delete!
-    update(deleted: true)
-    user.soft_delete! unless user.deleted?
+    result = update(deleted: true)
+    return result unless result
+
+    unless user.deleted?
+      result = user.soft_delete!
+      return result unless result
+    end
+    true
   end
 
   def beneficiaries_count
