@@ -12,7 +12,7 @@ class User < ApplicationRecord
   end
 
   def soft_delete!
-    result = update(deleted: true, email: "__deleted__#{email}")
+    result = update(deleted: true, email: "__deleted__#{id}__#{email}")
     return result unless result
 
     if provider? && !provider.deleted?
