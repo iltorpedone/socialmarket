@@ -1,0 +1,20 @@
+<%#
+# Date Show Partial
+
+This partial renders a date attribute,
+to be displayed on a resource's show page.
+
+By default, the attribute is rendered
+as a localized date string.
+
+## Local variables:
+
+- `field`:
+  An instance of DateField.
+  A wrapper around the Date value pulled from the database.
+
+%>
+
+<% if field.data %>
+  <%= field.date %>
+<% end %>
