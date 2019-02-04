@@ -60,6 +60,7 @@ it:
         updated_at: Aggiornato il
       beneficiary:
         is_active: Attivo?
+        birthdate: Data di nascita
         city: Città
         provider: Ente inviante
         full_name: Nome completo
