@@ -123,7 +123,7 @@ it:
     id: ID
     family_size: Nucleo familiare
     children_count: Numero figli
-    proposed_max_shop_count: Variazione max spese
+    proposed_max_shop_count: Variazione max spese (da compilare in fase di rinnovo)
     max_shop_count: Max spese
     current_shop_count: Spese fatte
     frequency: Frequenza
