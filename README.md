@@ -2,6 +2,15 @@
 
 - https://socialmarket-it.herokuapp.com
 
+## Local setup
+
+```
+$ docker-compose up
+$ bundle install
+$ rails db:setup
+$ rails server
+```
+
 ## Seed administrators
 
 ```bash
