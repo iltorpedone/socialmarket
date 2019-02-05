@@ -53,7 +53,7 @@ end
     <% next if !current_user.shop? && !current_user.administrator? && !current_user.provider? %>
     <% if current_user.provider? %>
       <% next if [:provider, :is_active].include?(attribute.attribute) %>
-      <% if attribute.attribute == :max_shop_count %>
+      <% if attribute.attribute == :max_shop_count && page.resource.persisted? %>
         <div class="field-unit__label">
           <%= f.label attribute.attribute %>
         </div>
@@ -62,6 +62,7 @@ end
         </div>
         <% next %>
       <% end %>
+      <% next if attribute.attribute == :proposed_max_shop_count && !page.resource.persisted? %>
     <% end %>
     <div class="field-unit field-unit--<%= attribute.html_class %>">
       <%= render_field attribute, f: f %>
