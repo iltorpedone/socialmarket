@@ -8,7 +8,7 @@ class BeneficiaryDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    provider: Field::BelongsTo.with_options(order: 'name'),
+    provider: Field::BelongsTo.with_options(order: 'name', scope: -> { Provider.alive }),
     city: Field::BelongsTo.with_options(order: 'name'),
     is_active: Field::Boolean,
     shoppings: Field::HasMany,
