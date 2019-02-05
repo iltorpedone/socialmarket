@@ -105,9 +105,9 @@ class BeneficiaryDashboard < Administrate::BaseDashboard
     :family_components_count_30_65,
     :family_components_count_over_65,
     :children_count,
-    :proposed_max_shop_count,
     :max_shop_count,
     :frequency,
+    :proposed_max_shop_count,
   ].freeze
 
   # Overwrite this method to customize how beneficiaries are displayed
