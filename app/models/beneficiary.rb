@@ -39,14 +39,14 @@ class Beneficiary < ApplicationRecord
   # P
   def point_rank
     case family_size
-    when 0 then 0 # TODO: What if family_size is 0?
+    when 0 then 0
     when 1 then 80
     when 2 then 100
     when 3 then 110
     when 4 then 130
     when 5 then 140
     else
-      140 # TODO: Validate this case.
+      140
     end
   end
 
