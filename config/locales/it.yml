@@ -134,7 +134,7 @@ it:
     item_category: Categoria
     item_category_id: Categoria
     description: Descrizione
-    price: Prezzo
+    price: Punti
     stock_count: Scorta
     provider_id: Ente inviante
     city_id: Città
@@ -151,3 +151,5 @@ it:
     app_role: Ruolo
     is_active: Attivo?
     unitary_amount: Importo unitario
+  cart:
+    points_not_allowed: 'Punti di spesa non consentiti.'

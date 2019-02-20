@@ -1,6 +1,9 @@
 module CloseShopping
   def self.call(shopping_id)
     shopping = Shopping.find(shopping_id)
+    result = UpdateBeneficiaryPointsAfterShopping.call(shopping: shopping)
+    return result if result.error?
+
     presenter = ShoppingPresenter.new(shopping)
     data = {
       items: shopping.items.map do |item|

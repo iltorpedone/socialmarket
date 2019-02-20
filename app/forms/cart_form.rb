@@ -1,6 +1,8 @@
 require 'json'
 
 class CartForm
+  include Mu
+
   attr_accessor :shopping_id, :user
   include ActiveModel::Model
 
@@ -21,6 +23,7 @@ class CartForm
       wi.update(stock_count: wi.stock_count - item['quantity'])
     end
     shopping.update_total!
+    Result.success
   end
 
   def shopping
@@ -68,6 +71,14 @@ class CartForm
     else
       presenter.items_count
     end
+  end
+
+  def point_rank
+    beneficiary.point_rank
+  end
+
+  def point_range
+    ValidateShoppingTotal.range(point_rank: point_rank)
   end
 
   def json_state
