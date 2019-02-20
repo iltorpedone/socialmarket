@@ -36,6 +36,10 @@ class Beneficiary < ApplicationRecord
     point_rank * max_shop_count
   end
 
+  def set_shopping_points
+    self.shopping_points = build_shopping_points
+  end
+
   # P
   def point_rank
     case family_size

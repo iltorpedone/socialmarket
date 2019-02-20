@@ -25,7 +25,7 @@ module Admin
         resource.is_active = false
       end
       authorize_resource(resource)
-
+      resource.set_shopping_points
       if resource.save
         AdminMailer.with(beneficiary: resource).confirm_new_beneficiary.deliver_now
         redirect_to(
