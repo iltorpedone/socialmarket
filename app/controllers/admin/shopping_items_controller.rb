@@ -3,6 +3,7 @@ module Admin
 
     def cart
       @form = CartForm.new(user: current_user, shopping_id: params[:shopping_id])
+      @enough_points = @form.beneficiary.shopping_points >= @form.point_range.min
       unless @form.shopping.opened?
         redirect_to admin_shopping_path(@form.shopping.id), notice: 'È possibile visualizzare il carrello solo se la spesa è aperta.'
       end
@@ -10,7 +11,7 @@ module Admin
 
     def bulk_add
       form = CartForm.new(user: current_user, shopping_id: params[:shopping_id])
-      form.bulk_add(params[:items])
+      result = form.bulk_add(params[:items])
       render json: { success: true } # TODO: return proper error result
     end
 

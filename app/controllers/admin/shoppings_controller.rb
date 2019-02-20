@@ -29,9 +29,25 @@ module Admin
     end
 
     def update
+      # TODO wrap every write operations within a form object
+      if resource_params[:status] == 'soft_closed'
+        result = ValidateShoppingTotal.call(
+          point_rank: requested_resource.beneficiary.point_rank,
+          total: requested_resource.total,
+        )
+        if result.error?
+          redirect_to cart_admin_shopping_shopping_items_path(requested_resource.id), alert: I18n.t('cart.points_not_allowed')
+          return
+        end
+      end
       if requested_resource.update(resource_params)
         if resource_params[:status] == 'hard_closed'
-          CloseShopping.(requested_resource.id)
+          result = CloseShopping.(requested_resource.id)
+          if result.error?
+            requested_resource.soft_closed!
+            redirect_to cart_admin_shopping_shopping_items_path(requested_resource.id), alert: I18n.t("cart.#{result.code}")
+            return
+          end
         end
         redirect_to(
           [namespace, requested_resource],

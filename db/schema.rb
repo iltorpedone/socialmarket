@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_04_092045) do
+ActiveRecord::Schema.define(version: 2019_02_16_172914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2019_02_04_092045) do
     t.integer "family_components_count_30_65"
     t.integer "family_components_count_over_65"
     t.date "birthdate"
+    t.integer "shopping_points"
     t.index ["city_id"], name: "index_beneficiaries_on_city_id"
     t.index ["frequency"], name: "index_beneficiaries_on_frequency"
     t.index ["gender"], name: "index_beneficiaries_on_gender"

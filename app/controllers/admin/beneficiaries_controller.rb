@@ -41,6 +41,9 @@ module Admin
 
     def update
       proposed_changed = resource_params[:proposed_max_shop_count].present? && resource_params[:proposed_max_shop_count] != requested_resource.proposed_max_shop_count
+      if resource_params[:max_shop_count].present?
+        requested_resource.shopping_points = requested_resource.build_shopping_points
+      end
       if requested_resource.update(resource_params)
         if proposed_changed
           AdminMailer.
@@ -111,6 +114,7 @@ module Admin
       beneficiary = Beneficiary.find(params[:id])
       beneficiary.max_shop_count = beneficiary.proposed_max_shop_count
       beneficiary.proposed_max_shop_count = nil
+      beneficiary.shopping_points = beneficiary.build_shopping_points
       beneficiary.save!
       redirect_to admin_beneficiary_path(beneficiary), notice: 'Nuova soglia confermata!'
     end

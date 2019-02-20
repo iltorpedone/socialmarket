@@ -11,6 +11,9 @@ class Cart {
       quantity: this.quantity,
       itemsCount: this.itemsCount,
     }
+    this.pointRank = Number.parseInt(container.dataset.pointRank)
+    this.pointMin = Number.parseInt(container.dataset.pointMin)
+    this.pointMax = Number.parseInt(container.dataset.pointMax)
     this.shoppingId = container.dataset.shoppingId
     this.domElements = {
       categoryInput: this.container.querySelector('[data-cart-category-input]'),
@@ -49,8 +52,19 @@ class Cart {
     return Number.parseFloat(value)
   }
 
-  formatPrice(value) {
-    return Number.parseFloat(value).toFixed(2)
+  formatItemPrice(value) {
+    return Number.parseFloat(value)
+  }
+
+  formatCartPrice(value) {
+    const formattedValue = `[${value}]`
+    if (value < this.pointMin) {
+      return `${formattedValue} Troppo basso.`
+    }
+    if (value > this.pointMax) {
+      return `${formattedValue} Troppo alto.`
+    }
+    return formattedValue
   }
 
   toQuantity(value) {
@@ -110,7 +124,7 @@ class Cart {
     let quantity = this.toQuantity(element.value)
     const price = this.toPrice(data.unitaryAmount) * quantity
     const priceView = element.parentElement.parentElement.querySelector('[data-price-view]')
-    priceView.innerHTML = this.formatPrice(price)
+    priceView.innerHTML = this.formatItemPrice(price)
     const id = element.dataset.id
     // price is passed just to speed up calculations
     this.setItem({ id, quantity, price })
@@ -138,11 +152,12 @@ class Cart {
     this.price = this.init.price + values.
       map((item) => item.price).
       reduce((memo, current) => memo + current, 0)
+    this.price = Number.parseInt(this.price)
     this.itemsCount = this.init.itemsCount + values.length
   }
 
   updateViews() {
-    this.domElements.priceView.innerHTML = this.formatPrice(this.price)
+    this.domElements.priceView.innerHTML = this.formatCartPrice(this.price)
     this.domElements.quantityView.innerHTML = this.quantity
     this.domElements.itemsCountView.innerHTML = this.itemsCount
   }

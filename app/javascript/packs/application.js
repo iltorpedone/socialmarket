@@ -76,6 +76,7 @@ function setupCart() {
     return
   }
   const cart = new Cart({ container })
+  cart.updateViews()
 }
 
 function setupCartToggle() {
