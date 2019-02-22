@@ -32,6 +32,9 @@ class BeneficiaryDashboard < Administrate::BaseDashboard
     proposed_max_shop_count: Field::Number,
     max_shop_count: Field::Number,
     current_shop_count: Field::Number,
+    point_rank: Field::Number,
+    shopping_points: Field::Number,
+    points_delta: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -80,6 +83,9 @@ class BeneficiaryDashboard < Administrate::BaseDashboard
     :max_shop_count,
     :current_shop_count,
     :frequency,
+    :point_rank,
+    :shopping_points,
+    :points_delta,
     :created_at,
     :updated_at,
   ].freeze

@@ -3,11 +3,6 @@ it:
     failure_after_create: Errore nel caricamento.
     failure_when_not_signed_in: Devi essere autenticato.
 
-  helpers:
-    submit:
-      sessions:
-        create: Crea
-        update: Aggiorna
   max_shops_alert: Il beneficiario ha già effettuato il numero massimo di spese a lui consentite.
   form:
     buttons:
@@ -49,6 +44,10 @@ it:
     soft_closed: Semi-chiuso 🚧
     hard_closed: Chiuso 🔒
   helpers:
+    submit:
+      sessions:
+        create: Crea
+        update: Aggiorna
     label:
       shopping:
         status: Stato
@@ -59,6 +58,9 @@ it:
         created_at: Creato il
         updated_at: Aggiornato il
       beneficiary:
+        points_delta: Punti rimanenti
+        shopping_points: Punti disponibili
+        point_rank: Punti singola spesa
         is_active: Attivo?
         birthdate: Data di nascita
         city: Città
@@ -127,6 +129,9 @@ it:
     max_shop_count: Max spese
     current_shop_count: Spese fatte
     frequency: Frequenza
+    shopping_points: Punti disponibili
+    points_delta: Punti rimanenti
+    point_rank: Punti singola spesa
     extended_at: Proroga
     created_at: Creato il
     updated_at: Aggiornato il

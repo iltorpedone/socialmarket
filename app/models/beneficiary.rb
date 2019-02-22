@@ -56,6 +56,6 @@ class Beneficiary < ApplicationRecord
 
   # T - P
   def points_delta
-    build_shopping_points - point_rank
+    build_shopping_points - (point_rank * current_shop_count)
   end
 end
