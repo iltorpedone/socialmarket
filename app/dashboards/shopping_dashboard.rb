@@ -10,7 +10,7 @@ class ShoppingDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     beneficiary: ShoppingBeneficiaryField.with_options(
       order: 'last_name',
-      scope: -> { Beneficiary.active },
+      scope: -> { Beneficiary.active.ordered },
     ),
     provider: Field::BelongsTo.with_options(order: 'name'),
     id: Field::Number,

@@ -8,7 +8,7 @@ class Beneficiary < ApplicationRecord
   scope :active, -> { where(is_active: true) }
 
   def self.ordered
-    order(is_active: :asc)
+    order(is_active: :asc, last_name: :asc)
   end
 
   def make_active!
