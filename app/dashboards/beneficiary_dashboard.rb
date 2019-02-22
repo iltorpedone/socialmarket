@@ -34,7 +34,7 @@ class BeneficiaryDashboard < Administrate::BaseDashboard
     current_shop_count: Field::Number,
     point_rank: Field::Number,
     shopping_points: Field::Number,
-    points_delta: Field::Number,
+    assigned_shopping_points: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -85,7 +85,7 @@ class BeneficiaryDashboard < Administrate::BaseDashboard
     :frequency,
     :point_rank,
     :shopping_points,
-    :points_delta,
+    :assigned_shopping_points,
     :created_at,
     :updated_at,
   ].freeze

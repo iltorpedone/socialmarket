@@ -32,12 +32,12 @@ class Beneficiary < ApplicationRecord
   end
 
   # T
-  def build_shopping_points
+  def assigned_shopping_points
     point_rank * max_shop_count
   end
 
   def set_shopping_points
-    self.shopping_points = build_shopping_points
+    self.shopping_points = assigned_shopping_points
   end
 
   # P
@@ -52,10 +52,5 @@ class Beneficiary < ApplicationRecord
     else
       140
     end
-  end
-
-  # T - P
-  def points_delta
-    build_shopping_points - (point_rank * current_shop_count)
   end
 end
