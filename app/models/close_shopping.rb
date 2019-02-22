@@ -20,7 +20,11 @@ module CloseShopping
       beneficiary: presenter.beneficiary,
       provider: presenter.provider,
     }
-    shopping.update!(serialized_data: data.to_json)
+    result = shopping.update(serialized_data: data.to_json)
+    return Result.error.code!(:cant_save_to_database) unless result
+
     shopping.items.delete_all
+
+    Result.success
   end
 end
