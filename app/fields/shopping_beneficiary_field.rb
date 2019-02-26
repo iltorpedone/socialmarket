@@ -11,6 +11,6 @@ class ShoppingBeneficiaryField < Administrate::Field::BelongsTo
   end
 
   def display_candidate_resource(resource)
-    resource.full_name_by_last_name
+    "#{resource.full_name_by_last_name} ##{resource.id}"
   end
 end
