@@ -9,4 +9,8 @@ class ShoppingBeneficiaryField < Administrate::Field::BelongsTo
       scope
     end
   end
+
+  def display_candidate_resource(resource)
+    resource.full_name_by_last_name
+  end
 end
