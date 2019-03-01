@@ -52,6 +52,7 @@ it:
       shopping:
         status: Stato
         beneficiary: Beneficiario
+        beneficiary_name: Beneficiario
         provider: Ente inviante
         total: Importo tot.
         id: ID

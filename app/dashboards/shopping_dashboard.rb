@@ -12,6 +12,7 @@ class ShoppingDashboard < Administrate::BaseDashboard
       order: 'last_name',
       scope: -> { Beneficiary.active.ordered },
     ),
+    beneficiary_name: Field::String,
     provider: Field::BelongsTo.with_options(order: 'name'),
     id: Field::Number,
     total: Field::String.with_options(searchable: false),
@@ -28,7 +29,7 @@ class ShoppingDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :status,
-    :beneficiary,
+    :beneficiary_name,
     :provider,
     :total,
     :id,
@@ -64,6 +65,6 @@ class ShoppingDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(shopping)
-    "[##{shopping.id}] Beneficiario \"#{shopping.beneficiary.full_name}\""
+    "[##{shopping.id}] Beneficiario \"#{shopping.beneficiary.full_name_by_last_name}\""
   end
 end
