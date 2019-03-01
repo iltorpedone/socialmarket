@@ -21,4 +21,7 @@ class Shopping < ApplicationRecord
   def self.ordered
     order(status: :asc, created_at: :desc)
   end
+  def beneficiary_name
+    beneficiary.full_name_by_last_name
+  end
 end
