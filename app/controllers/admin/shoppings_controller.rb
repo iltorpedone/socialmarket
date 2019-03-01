@@ -70,7 +70,15 @@ module Admin
     private
 
     def scoped_resource
-      Shopping.for_user(current_user).ordered
+      scope = Shopping.for_user(current_user)
+      direction = params.dig(:shopping, :direction)
+      return scope.ordered unless direction
+
+      Shopping.order_by(
+        scope: scope,
+        field: params.dig(:shopping, :order),
+        direction: direction,
+      )
     end
     helper_method :scoped_resource
   end

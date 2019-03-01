@@ -21,6 +21,27 @@ class Shopping < ApplicationRecord
   def self.ordered
     order(status: :asc, created_at: :desc)
   end
+
+  def self.order_by(scope:, field:, direction: 'ASC')
+    case field
+    when 'beneficiary_name'
+      scope.joins(:beneficiary).order([
+        "beneficiaries.last_name #{direction}",
+        "beneficiaries.first_name #{direction}",
+        "shoppings.status ASC",
+        "shoppings.created_at ASC",
+      ].join(', '))
+    when 'provider'
+      scope.joins(:provider).order([
+        "providers.name #{direction}",
+        "shoppings.status ASC",
+        "shoppings.created_at ASC",
+      ])
+    else
+      scope.order("shoppings.#{field} #{direction}")
+    end
+  end
+
   def beneficiary_name
     beneficiary.full_name_by_last_name
   end
