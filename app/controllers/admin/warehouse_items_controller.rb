@@ -14,6 +14,15 @@ module Admin
       end
     end
 
+    def destroy
+      if requested_resource.soft_delete!
+        flash[:notice] = translate_with_resource("destroy.success")
+      else
+        flash[:error] = requested_resource.errors.full_messages.join("<br/>")
+      end
+      redirect_to action: :index
+    end
+
     private
 
     def index_default
@@ -35,7 +44,7 @@ module Admin
     end
 
     def scoped_resource
-      scope = WarehouseItem.ordered
+      scope = WarehouseItem.alive.ordered
       if params[:item_category_id].present?
         scope.where(item_category_id: params[:item_category_id])
       else
