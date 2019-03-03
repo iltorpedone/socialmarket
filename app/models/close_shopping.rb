@@ -12,7 +12,7 @@ module CloseShopping
           price: item.price,
           category_name: item.category_name,
           name: item.name,
-          id: item.id,
+          warehouse_item_id: warehouse_item_id,
         }
       end,
       point_rank: presenter.beneficiary.point_rank.to_i,
