@@ -29,6 +29,11 @@ it:
               required: Il campo utente è richiesto.
             city:
               required: Il campo città è richiesto.
+        warehouse_item:
+          attributes:
+            stock_count:
+              blank: Le scorte non possono essere vuote.
+              not_a_number: La scorta deve essere un numero maggiore o uguale a 0.
   enums:
     administrator: Amministratore
     beneficiary: Beneficiario
