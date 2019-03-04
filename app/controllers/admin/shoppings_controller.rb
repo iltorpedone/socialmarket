@@ -77,7 +77,17 @@ module Admin
       end
     end
 
-    def valid_action?(name, resource = resource_class)
+    def destroy
+      result = DeleteShopping.call(shopping: requested_resource)
+      if result.success?
+        flash[:notice] = translate_with_resource("destroy.success")
+      else
+        flash[:error] = requested_resource.errors.full_messages.join("<br/>")
+      end
+      redirect_to action: :index
+    end
+
+ def valid_action?(name, resource = resource_class)
       if current_user.shop?
         return false if %i[edit create update destroy].include?(name)
       end
