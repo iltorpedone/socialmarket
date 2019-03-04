@@ -4,6 +4,17 @@ class Shopping < ApplicationRecord
   has_many :items, class_name: :ShoppingItem, dependent: :destroy
   enum status: [ :opened, :soft_closed, :hard_closed ]
 
+  scope :query,  ->(q) {
+    query_beneficiary(q).or(Shopping.query_provider(q))
+  }
+  scope :query_beneficiary, ->(q) {
+    joins(:beneficiary, :provider).where("lower(beneficiaries.first_name) LIKE ? OR lower(beneficiaries.last_name) LIKE ?", "%#{q}%", "%#{q}%")
+  }
+
+  scope :query_provider, ->(q) {
+    joins(:beneficiary, :provider).where("lower(providers.name) LIKE ?", "%#{q}%")
+  }
+
   accepts_nested_attributes_for :items
 
   def update_total!

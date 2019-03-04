@@ -12,7 +12,7 @@ class ShoppingDashboard < Administrate::BaseDashboard
       order: 'last_name',
       scope: -> { Beneficiary.active.ordered },
     ),
-    beneficiary_name: Field::String,
+    beneficiary_name: Field::String.with_options(searchable: false),
     provider: Field::BelongsTo.with_options(order: 'name'),
     id: Field::Number,
     total: Field::String.with_options(searchable: false),
