@@ -21,7 +21,8 @@ module Admin
     def create
       resource = resource_class.new(resource_params)
       if current_user.provider?
-        resource.provider_id = current_user.provider.id
+        resource.provider = current_user.provider
+        resource.city = current_user.provider.city
         resource.is_active = false
       end
       authorize_resource(resource)

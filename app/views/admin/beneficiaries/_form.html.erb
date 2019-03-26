@@ -52,13 +52,37 @@ end
     <% end %>
     <% next if !current_user.shop? && !current_user.administrator? && !current_user.provider? %>
     <% if current_user.provider? %>
-      <% next if [:provider, :is_active].include?(attribute.attribute) %>
-      <% if attribute.attribute == :max_shop_count && page.resource.persisted? %>
-        <div class="field-unit__label">
-          <%= f.label attribute.attribute %>
+      <% next if [:is_active].include?(attribute.attribute) %>
+      <% if attribute.attribute == :provider %>
+        <div class="field-unit field-unit--<%= attribute.html_class %>">
+          <div class="field-unit__label">
+            <%= f.label attribute.attribute %>
+          </div>
+          <div class="field-unit__field">
+            <%= current_user.provider.name %>
+          </div>
         </div>
-        <div class="field-unit__field">
-          <%= render locals: { field: attribute }, partial: "/fields/#{attribute.class.to_s.demodulize.underscore}/show" %>
+        <% next %>
+      <% end %>
+      <% if attribute.attribute == :city %>
+        <div class="field-unit field-unit--<%= attribute.html_class %>">
+          <div class="field-unit__label">
+            <%= f.label attribute.attribute %>
+          </div>
+          <div class="field-unit__field">
+            <%= current_user.provider.city.name %>
+          </div>
+        </div>
+        <% next %>
+      <% end %>
+      <% if attribute.attribute == :max_shop_count && page.resource.persisted? %>
+        <div class="field-unit field-unit--<%= attribute.html_class %>">
+          <div class="field-unit__label">
+            <%= f.label attribute.attribute %>
+          </div>
+          <div class="field-unit__field">
+            <%= render locals: { field: attribute }, partial: "/fields/#{attribute.class.to_s.demodulize.underscore}/show" %>
+          </div>
         </div>
         <% next %>
       <% end %>
