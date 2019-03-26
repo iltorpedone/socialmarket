@@ -10,16 +10,16 @@ gem 'clearance'
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'loofah', '>= 2.2.3' # addresses CVE-2018-16468. This is not a direct dependency.
+gem 'mu-result', '~> 1.0.0'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
+gem 'rack', '~> 2.0.6'
 gem 'rails', '~> 5.2.1'
 gem 'rollbar', '~> 2.18'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker', '~> 3.5'
-gem 'rack', '~> 2.0.6'
-gem 'mu-result', '~> 1.0.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
