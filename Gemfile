@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.0'
 
+gem 'actionview', '>= 5.2.2.1' # Addresses CVE-2019-5418.
 gem 'administrate'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'clearance'
