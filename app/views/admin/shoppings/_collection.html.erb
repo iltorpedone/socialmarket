@@ -118,7 +118,7 @@ to display a collection of resources in an HTML table.
             ) %>
             <%= link_to(
               '→🔒',
-              admin_shopping_path(resource.id, {shopping: {status: :hard_closed}}),
+              admin_shopping_hard_close_path(resource.id),
               method: :put,
               title: 'Chiudi',
               remote: true,

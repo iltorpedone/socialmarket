@@ -52,7 +52,7 @@ as well as a link to its edit page.
     ) %>
     <%= link_to(
       '→🔒',
-      admin_shopping_path(page.resource.id, {shopping: {status: :hard_closed}}),
+      admin_shopping_hard_close_path(page.resource.id),
       method: :put,
       title: 'Chiudi',
       remote: true,

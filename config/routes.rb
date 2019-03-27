@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :item_categories
     resources :providers
     resources :shoppings do
+      put :hard_close
       resources :shopping_items do
         collection do
           get :cart

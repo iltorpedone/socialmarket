@@ -116,8 +116,10 @@ module Admin
       beneficiary = Beneficiary.find(params[:id])
       beneficiary.max_shop_count = beneficiary.proposed_max_shop_count
       beneficiary.proposed_max_shop_count = nil
+      SLACK_NOTIFIER.notify("[Conferma soglia massima di spesa][beneficiario ID:#{beneficiary.id}][punti spesa correnti:#{beneficiary.shopping_points}]")
       beneficiary.set_shopping_points
       beneficiary.save!
+      SLACK_NOTIFIER.notify("[Conferma soglia massima di spesa][beneficiario ID:#{beneficiary.id}][punti spesa aggiornati:#{beneficiary.shopping_points}]")
       redirect_to admin_beneficiary_path(beneficiary), notice: 'Nuova soglia confermata!'
     end
 

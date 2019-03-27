@@ -1,8 +1,15 @@
 module CloseShopping
-  def self.call(shopping_id)
+  def self.call(shopping_id:)
+    SLACK_NOTIFIER.notify("[Chiusura spesa][id:#{shopping_id}] INIZIO")
     shopping = Shopping.find(shopping_id)
-    result = UpdateBeneficiaryPointsAfterShopping.call(shopping: shopping)
-    return result if result.error?
+    beneficiary = shopping.beneficiary
+    old_shopping_points = beneficiary.shopping_points
+    result = UpdateBeneficiaryPointsAfterShopping.call(beneficiary: beneficiary)
+    if result.error?
+      SLACK_NOTIFIER.notify("[Chiusura spesa][id:#{shopping_id}][Errore:#{result.code}]")
+      shopping.beneficiary.update(shopping_points: old_shopping_points)
+      return result
+    end
 
     presenter = ShoppingPresenter.new(shopping)
     data = {
@@ -22,11 +29,22 @@ module CloseShopping
       beneficiary: presenter.beneficiary,
       provider: presenter.provider,
     }
-    result = shopping.update(serialized_data: data.to_json)
-    return Result.error.code!(:cant_save_to_database) unless result
+    result = shopping.update(
+      status: :hard_closed,
+      serialized_data: data.to_json,
+    )
+    unless result
+      Rollbar.error(
+        'Close Shopping',
+        shopping_id: shopping_id,
+        code: :cant_save_to_database,
+      )
+      SLACK_NOTIFIER.notify("[Chiusura spesa][id:#{shopping_id}][Errore:can't save to database]")
+      return Result.error.code!(:cant_save_to_database)
+    end
 
     shopping.items.delete_all
-
+    SLACK_NOTIFIER.notify("[Chiusura spesa][id:#{shopping_id}][Successo] FINE")
     Result.success
   end
 end

@@ -45,6 +45,21 @@ module Admin
       end
     end
 
+    def hard_close
+      result = CloseShopping.call(shopping_id: params[:shopping_id])
+      if result.error?
+        redirect_to(
+          cart_admin_shopping_shopping_items_path(params[:shopping_id]),
+          alert: I18n.t("cart.#{result.code}"),
+        )
+        return
+      end
+      redirect_to(
+        [namespace, requested_resource],
+        notice: translate_with_resource("update.success"),
+      )
+    end
+
     def update
       # TODO wrap every write operations within a form object
       if resource_params[:status] == 'soft_closed'
@@ -58,14 +73,6 @@ module Admin
         end
       end
       if requested_resource.update(resource_params)
-        if resource_params[:status] == 'hard_closed'
-          result = CloseShopping.(requested_resource.id)
-          if result.error?
-            requested_resource.soft_closed!
-            redirect_to cart_admin_shopping_shopping_items_path(requested_resource.id), alert: I18n.t("cart.#{result.code}")
-            return
-          end
-        end
         redirect_to(
           [namespace, requested_resource],
           notice: translate_with_resource("update.success"),
