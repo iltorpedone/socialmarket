@@ -88,6 +88,7 @@ end
       <% end %>
       <% next if attribute.attribute == :proposed_max_shop_count && !page.resource.persisted? %>
     <% end %>
+    <% next if attribute.attribute == :shopping_points && !current_user.administrator?%>
     <div class="field-unit field-unit--<%= attribute.html_class %>">
       <%= render_field attribute, f: f %>
     </div>
