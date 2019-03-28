@@ -51,7 +51,7 @@ module CloseShopping
     # Provides the host when calling _url methods.
     Rails.application.routes.default_url_options = ActionMailer::Base.default_url_options
 
-    SLACK_NOTIFIER.notify("Beneficiario[ID:#{beneficiary.id}] #{admin_beneficiary_url(beneficiary.id)}")
+    SLACK_NOTIFIER.notify("Beneficiario[ID:#{beneficiary.id}] https://socialmarket-it.herokuapp.com/admin/beneficiaries/#{beneficiary.id}")
     Result.success
   end
 end
