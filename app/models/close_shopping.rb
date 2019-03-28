@@ -1,4 +1,6 @@
 module CloseShopping
+  include Rails.application.routes.url_helpers # Used to access _url methods.
+
   def self.call(shopping_id:)
     SLACK_NOTIFIER.notify("[Chiusura spesa][id:#{shopping_id}] INIZIO")
     shopping = Shopping.find(shopping_id)
@@ -45,6 +47,11 @@ module CloseShopping
 
     shopping.items.delete_all
     SLACK_NOTIFIER.notify("[Chiusura spesa][id:#{shopping_id}][Successo] FINE")
+
+    # Provides the host when calling _url methods.
+    Rails.application.routes.default_url_options = ActionMailer::Base.default_url_options
+
+    SLACK_NOTIFIER.notify("Beneficiario[ID:#{beneficiary.id}] #{admin_beneficiary_url(beneficiary.id)}")
     Result.success
   end
 end
