@@ -55,8 +55,8 @@ module Admin
         return
       end
       redirect_to(
-        [namespace, requested_resource],
-        notice: translate_with_resource("update.success"),
+        admin_shoppings_path,
+        notice: I18n.t('shopping.hard_closed'),
       )
     end
 

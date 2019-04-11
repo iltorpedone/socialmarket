@@ -164,3 +164,4 @@ it:
     unitary_amount: Importo unitario
   cart:
     points_not_allowed: 'Punti di spesa non consentiti.'
+    hard_closed: 'Spesa chiusa permanentemente.'
