@@ -12,12 +12,12 @@ class DeleteShopping
 
   def perform
     beneficiary = shopping.beneficiary
-    SLACK_NOTIFIER.notify("[Cancellazione spesa][id:#{shopping_id}] INIZIO")
+    SLACK_NOTIFIER.notify("[Cancellazione spesa][id:#{shopping.id}] INIZIO")
     build_data.then do |data|
       if shopping.hard_closed?
-        SLACK_NOTIFIER.notify("[Cancellazione spesa][id:#{shopping_id}][spesa chiusa permanentemente]")
+        SLACK_NOTIFIER.notify("[Cancellazione spesa][id:#{shopping.id}][spesa chiusa permanentemente]")
         new_shopping_points = beneficiary.shopping_points + data[:point_rank]
-        SLACK_NOTIFIER.notify("[Cancellazione spesa][id:#{shopping_id}][punti spesa correnti beneficiario:#{beneficiary.shopping_points}][punti spesa da sommare:#{data[:point_rank]}][somma:#{new_shopping_points}]")
+        SLACK_NOTIFIER.notify("[Cancellazione spesa][id:#{shopping.id}][punti spesa correnti beneficiario:#{beneficiary.shopping_points}][punti spesa da sommare:#{data[:point_rank]}][somma:#{new_shopping_points}]")
         beneficiary.update_columns(shopping_points: new_shopping_points)
       end
       data[:items].each do |item|
