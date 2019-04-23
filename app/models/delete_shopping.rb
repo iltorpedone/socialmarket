@@ -28,7 +28,7 @@ class DeleteShopping
     end
     shopping.items.delete_all
     shopping.delete
-    SLACK_NOTIFIER.notify("[Cancellazione spesa][id:#{shopping_id}] FINE")
+    SLACK_NOTIFIER.notify("[Cancellazione spesa][id:#{shopping.id}] FINE")
     Result.success
   end
 
