@@ -4,7 +4,9 @@ class SlackNotifier
   attr_accessor :webhook_url
 
   def initialize(webhook_url:)
-    self.webhook_url = URI.parse(webhook_url)
+    if webhook_url.present?
+      self.webhook_url = URI.parse(webhook_url)
+    end
   end
 
   def notify(message)
