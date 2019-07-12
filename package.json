@@ -3,6 +3,8 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
+    "fstream": "^1.0.12",
+    "js-yaml": "^3.13.1",
     "lodash.mergewith": "^4.6.2",
     "lodash.template": "^4.5.0"
   },
