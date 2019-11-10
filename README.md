@@ -2,11 +2,18 @@
 
 - https://socialmarket-it.herokuapp.com
 
+## Requirements
+
+- Yarn
+- Ruby 2.6
+- Docker
+
 ## Local setup
 
 ```bash
 $ docker-compose up
 $ bundle install
+$ yarn install
 $ rails db:setup
 $ rails server
 ```
