@@ -18,6 +18,6 @@ module ValidateShoppingTotal
   end
 
   def self.upper_bound(point_rank:)
-    point_rank + 5
+    point_rank
   end
 end
