@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.0'
 
 gem 'actionview', '~> 5.2.4' # Addresses CVE-2019-5418.
-gem 'administrate', '~> 0.12'
+gem 'administrate', '~> 0.13'
 gem 'bootsnap', '~> 1.4', require: false
 gem 'clearance', '~> 1.16'
 gem 'coffee-rails', '~> 4.2'
