@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.0'
+ruby '2.7.2'
 
 gem 'actionview', '~> 5.2.4' # Addresses CVE-2019-5418.
 gem 'administrate', '~> 0.13'
