@@ -41,7 +41,7 @@ class Beneficiary < ApplicationRecord
   end
 
   def set_shopping_points
-    self.shopping_points = assigned_shopping_points
+    self.shopping_points = (max_shop_count - current_shop_count) * point_rank
   end
 
   # P
