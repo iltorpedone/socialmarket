@@ -114,7 +114,6 @@ class BeneficiaryDashboard < Administrate::BaseDashboard
     :max_shop_count,
     :frequency,
     :proposed_max_shop_count,
-    :shopping_points,
   ].freeze
 
   # Overwrite this method to customize how beneficiaries are displayed
