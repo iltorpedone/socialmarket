@@ -43,10 +43,8 @@ module Admin
     def update
       proposed_changed = resource_params[:proposed_max_shop_count].present? && resource_params[:proposed_max_shop_count].to_i != requested_resource.proposed_max_shop_count
       if requested_resource.update(resource_params)
-        if resource_params[:max_shop_count].present? && requested_resource.max_shop_count != resource_params[:max_shop_count].to_i
-          requested_resource.set_shopping_points
-          requested_resource.save
-        end
+        requested_resource.set_shopping_points
+        requested_resource.save
         if proposed_changed
           AdminMailer.
             with(beneficiary: requested_resource).
