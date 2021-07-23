@@ -12,7 +12,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'loofah', '~> 2.4' # addresses CVE-2018-16468. This is not a direct dependency.
 gem 'mu-result', '~> 1.2'
 gem 'pg', '~> 1.2'
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 4.3'
 gem 'rack', '~> 2.1'
 gem 'rails', '~> 5.2.1'
 gem 'rollbar', '~> 2.18'
