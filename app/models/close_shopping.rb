@@ -1,4 +1,5 @@
 module CloseShopping
+  include Mu
   include Rails.application.routes.url_helpers # Used to access _url methods.
 
   def self.call(shopping_id:)

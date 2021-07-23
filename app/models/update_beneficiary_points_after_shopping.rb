@@ -1,4 +1,6 @@
 module UpdateBeneficiaryPointsAfterShopping
+  include Mu
+
   def self.call(beneficiary:)
     if beneficiary.shopping_points < beneficiary.point_rank
       return Result.error.code!(:not_enough_points)
