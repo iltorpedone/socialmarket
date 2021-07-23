@@ -54,6 +54,6 @@ class Shopping < ApplicationRecord
   end
 
   def beneficiary_name
-    beneficiary.full_name_by_last_name
+    beneficiary&.full_name_by_last_name || "[Non presente!]"
   end
 end
