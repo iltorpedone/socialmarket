@@ -14,10 +14,10 @@ module ValidateShoppingTotal
   end
 
   def self.lower_bound(point_rank:)
-    point_rank - 10
+    point_rank
   end
 
   def self.upper_bound(point_rank:)
-    point_rank
+    point_rank + 3
   end
 end
