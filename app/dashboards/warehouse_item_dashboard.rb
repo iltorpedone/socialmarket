@@ -13,6 +13,7 @@ class WarehouseItemDashboard < Administrate::BaseDashboard
     name: Field::String,
     unitary_amount: Field::String.with_options(searchable: false),
     stock_count: Field::Number,
+    max_purchasable_count: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -27,6 +28,7 @@ class WarehouseItemDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :stock_count,
+    :max_purchasable_count,
     :unitary_amount,
   ].freeze
 
@@ -38,6 +40,7 @@ class WarehouseItemDashboard < Administrate::BaseDashboard
     :name,
     :unitary_amount,
     :stock_count,
+    :max_purchasable_count,
     :created_at,
     :updated_at,
   ].freeze
@@ -50,6 +53,7 @@ class WarehouseItemDashboard < Administrate::BaseDashboard
     :name,
     :unitary_amount,
     :stock_count,
+    :max_purchasable_count,
   ].freeze
 
   # Overwrite this method to customize how warehouse items are displayed

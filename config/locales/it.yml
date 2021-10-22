@@ -147,6 +147,7 @@ it:
     description: Descrizione
     price: Punti
     stock_count: Scorta
+    max_purchasable_count: Quantita' max acquistabile
     provider_id: Ente inviante
     city_id: Città
     extended_at: Proroga
