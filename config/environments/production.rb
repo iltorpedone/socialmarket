@@ -73,9 +73,9 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.mailgun.org',
+    address: 'smtp.eu.mailgun.org',
     port: 587,
-    user_name: 'socialmarket@mg.olisti.co',
+    user_name: 'postmaster@mg.marse.it',
     password: Rails.application.credentials.mailgun_password,
     authentication: :plain,
     # enable_starttls_auto: true, # => defaults to `true`
@@ -88,8 +88,8 @@ Rails.application.configure do
 
   # config.action_mailer.perform_deliveries = true # => defaults to `true`
   config.action_mailer.default_options = {
-    from: 'socialmarket@olisti.co',
-    reply_to: 'socialmarket@olisti.co',
+    from: 'socialmarket@marse.it',
+    reply_to: 'socialmarket@marse.it',
   }
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).

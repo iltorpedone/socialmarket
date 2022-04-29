@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'info@socialmarketnordmi.org'
+  default from: 'info@marse.it'
   layout 'mailer'
 end
