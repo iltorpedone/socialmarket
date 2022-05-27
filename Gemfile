@@ -13,7 +13,7 @@ gem 'loofah', '~> 2.4' # addresses CVE-2018-16468. This is not a direct depende
 gem 'mu-result', '~> 1.2'
 gem 'pg', '~> 1.2'
 gem 'puma', '~> 4.3'
-gem 'rack', '~> 2.1'
+gem 'rack', '~> 2.2'
 gem 'rails', '= 5.2.4.5'
 gem 'rollbar', '~> 2.18'
 gem 'sass-rails', '~> 5.0'
