@@ -9,7 +9,7 @@ gem 'bootsnap', '~> 1.4', require: false
 gem 'clearance', '~> 1.16'
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
-gem 'loofah', '~> 2.4' # addresses CVE-2018-16468. This is not a direct dependency.
+gem 'loofah', '~> 2.19' # addresses CVE-2018-16468. This is not a direct dependency.
 gem 'mu-result', '~> 1.2'
 gem 'pg', '~> 1.2'
 gem 'puma', '~> 4.3'
